@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type {
-  Attempt, Case, ExperienceCard, HelpRequest, LearningState, MentoringState, ProgressState,
+  Attempt, Case, Confidence, ExperienceCard, HelpRequest, LearningState, MentoringState, Origin, ProgressState, ReviewDecision,
   Snapshot, StructuredAnswer, SupportLevel, Task,
 } from './index';
 
@@ -10,9 +10,9 @@ export type LearningCommand =
   | { type: 'open'; attempt: Attempt }
   | { type: 'resume'; attemptId: string }
   | { type: 'disclose-help'; attemptId: string; level: SupportLevel }
-  | { type: 'submit'; attemptId: string; answer: StructuredAnswer; confidence: 0.5 | 0.75 | 0.9 }
+  | { type: 'submit'; attemptId: string; answer: StructuredAnswer; confidence: Confidence }
   | { type: 'reveal-draft'; attemptId: string }
-  | { type: 'review-draft'; attemptId: string; decision: 'accept' | 'correct' | 'need_info' }
+  | { type: 'review-draft'; attemptId: string; decision: ReviewDecision }
   | { type: 'exit-check'; attemptId: string }
   | { type: 'record-exposure'; exposure: LearningState['exposures'][number] };
 export type MentoringCommand =
@@ -56,4 +56,4 @@ export interface OpportunitiesPageProps {
 export interface MetricsPanelProps { observations: Pick<Snapshot, 'learning' | 'progress'> }
 export interface LearningView { activeAttempt: Attempt | null }
 export interface MentoringView { requests: readonly HelpRequest[]; cards: readonly ExperienceCard[] }
-export interface MetricsView { incorrectDraftAcceptance: { accepted: number; revealed: number; origin: 'session' | 'demo_seed' }[] }
+export interface MetricsView { incorrectDraftAcceptance: { accepted: number; revealed: number; origin: Origin }[] }

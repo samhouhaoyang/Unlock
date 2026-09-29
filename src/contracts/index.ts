@@ -44,7 +44,7 @@ export const teachingAttemptSchema = z.object({ id, caseId: id, caseVersion: z.n
 export const exposureSchema = z.object({ caseId: id, attemptId: id, exposedAt: timestamp, reason: z.enum(['help', 'draft', 'answer', 'feedback']) });
 export const aiReviewEventSchema = z.object({ id, attemptId: id, caseId: id, draftIsCorrect: z.boolean(), revealedAt: timestamp, decision: reviewDecisionSchema.nullable(), origin: originSchema });
 export const evidenceSchema = z.object({
-  status: z.enum(['pending', 'passed', 'needs_review']), attemptIds: z.array(id), explanation: z.string(),
+  status: z.enum(['pending', 'passed', 'failed', 'needs_review']), attemptIds: z.array(id), explanation: z.string(),
 });
 export const evidenceStatesSchema = z.object({ E1: evidenceSchema, E2: evidenceSchema, E3: evidenceSchema, E4: evidenceSchema, E5: evidenceSchema });
 export const transitionSchema = z.object({
@@ -91,6 +91,8 @@ export const snapshotSchema = z.object({
 
 export type SupportLevel = z.infer<typeof supportLevelSchema>;
 export type Origin = z.infer<typeof originSchema>;
+export type Confidence = z.infer<typeof confidenceSchema>;
+export type ReviewDecision = z.infer<typeof reviewDecisionSchema>;
 export type ScenarioId = z.infer<typeof scenarioIdSchema>;
 export type Role = z.infer<typeof roleSchema>;
 export type StructuredAnswer = z.infer<typeof answerSchema>;

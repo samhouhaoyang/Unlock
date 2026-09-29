@@ -8,6 +8,21 @@ function memoryStorage(): Persistence {
 }
 
 describe('persisted demo workflow', () => {
+  it('can persist a failed retention gate at L4 without fabricating another stage', () => {
+    const storage = memoryStorage();
+    const runtime = createRuntime({ storage });
+    const result = runtime.transact(snapshot => {
+      const next = withRecordedActivity(snapshot);
+      const skill = next.progress.skills[0]!;
+      skill.supportLevel = 4;
+      skill.evidenceStates.E2 = { status: 'failed', attemptIds: ['test-attempt'], explanation: 'Retention check failed; support is already L4.' };
+      return next;
+    });
+    expect(result.ok).toBe(true);
+    expect(createRuntime({ storage }).read().snapshot?.progress.skills[0]).toMatchObject({
+      stageId: 'test-stage', supportLevel: 4, evidenceStates: { E2: { status: 'failed' } },
+    });
+  });
   it('recovers all feature records together with confidence, disclosure, exposure, and provenance intact', () => {
     const storage = memoryStorage();
     const runtime = createRuntime({ storage });
