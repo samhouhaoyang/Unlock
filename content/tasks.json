@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "label": "Fictional opportunity examples; no external business action",
+  "tasks": [
+    {
+      "id": "TASK-WK", "caseId": "WK-01", "skillId": "cross-period-expense-allocation",
+      "title": "Practise reviewing December expense", "learningValue": "high", "deliveryRisk": "low", "recommendedRoute": "learner",
+      "routeReason": "High learning value and low delivery risk: preserve this judgment for junior practice.",
+      "interaction": "practice", "label": "Training copy; does not post to a real ledger"
+    },
+    {
+      "id": "TASK-AI", "caseId": "CK-01", "skillId": "cross-period-expense-allocation",
+      "title": "A routine allocation with a prepared correct draft", "learningValue": "low", "deliveryRisk": "low", "recommendedRoute": "ai",
+      "routeReason": "Low learning value and low delivery risk: show a prepared AI-handled example; accept a correct draft when supported by the facts.",
+      "interaction": "example", "label": "Prepared example; no external AI job or completion action"
+    },
+    {
+      "id": "TASK-MENTOR-LEARNING", "caseId": "UN-01", "skillId": "cross-period-expense-allocation",
+      "title": "A consequential milestone judgment with missing evidence", "learningValue": "high", "deliveryRisk": "high", "recommendedRoute": "mentor",
+      "routeReason": "High-risk delivery remains the mentor's responsibility. A separate fictional practice copy can illustrate which evidence is missing.",
+      "interaction": "example", "label": "Mentor owns delivery; information preview only"
+    },
+    {
+      "id": "TASK-MENTOR-ROUTINE", "caseId": "EX-01", "skillId": "cross-period-expense-allocation",
+      "title": "A routine but consequential allocation approval", "learningValue": "low", "deliveryRisk": "high", "recommendedRoute": "mentor",
+      "routeReason": "High consequences require mentor delivery review even when the calculation is simple and its learning value is low.",
+      "interaction": "example", "label": "Explanatory routing example; fictional case is not a real approval"
+    }
+  ]
+}

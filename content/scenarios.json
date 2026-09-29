@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 1,
+  "label": "Authored demonstration fixtures; all seeded observations are demo_seed, never session results",
+  "scenarios": [
+    {
+      "id": "start-from-zero",
+      "label": "Start from zero: no simulated history",
+      "skillId": "cross-period-expense-allocation",
+      "stageId": "zero-stage-1",
+      "supportLevel": 4,
+      "teachingAttempts": [],
+      "attempts": [],
+      "aiReviewEvents": [],
+      "experienceCards": [],
+      "reviewConcerns": []
+    },
+    {
+      "id": "growth-checkpoint",
+      "label": "Growth checkpoint: simulated history (demo_seed); mixed-evidence changes are demonstration results",
+      "skillId": "cross-period-expense-allocation",
+      "stageId": "growth-stage-1",
+      "supportLevel": 2,
+      "teachingAttempts": [
+        {
+          "id": "GROWTH-TEACH-01",
+          "caseId": "HIS-TEACH-01",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 300,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 4,
+          "answerRevealed": true,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": true,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-10T09:00:00.000Z",
+          "submittedAt": "2026-09-10T09:05:00.000Z",
+          "origin": "demo_seed"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "GROWTH-CHECK-01",
+          "caseId": "HIS-RG-01",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 300,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-12T09:00:00.000Z",
+          "submittedAt": "2026-09-12T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-02",
+          "caseId": "HIS-RG-02",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 200,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-13T09:00:00.000Z",
+          "submittedAt": "2026-09-13T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-03",
+          "caseId": "HIS-RG-03",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 100,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-14T09:00:00.000Z",
+          "submittedAt": "2026-09-14T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-04",
+          "caseId": "HIS-RG-04",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 250,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-15T09:00:00.000Z",
+          "submittedAt": "2026-09-15T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-05",
+          "caseId": "HIS-RG-05",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 0,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "service-not-started"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-16T09:00:00.000Z",
+          "submittedAt": "2026-09-16T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-06",
+          "caseId": "HIS-RG-06",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 120,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-17T09:00:00.000Z",
+          "submittedAt": "2026-09-17T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-CHECK-07",
+          "caseId": "HIS-RT-01",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 150,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.5,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-18T09:00:00.000Z",
+          "submittedAt": "2026-09-18T09:05:00.000Z",
+          "origin": "demo_seed",
+          "teachingAttemptId": "GROWTH-TEACH-01"
+        },
+        {
+          "id": "GROWTH-CHECK-08",
+          "caseId": "HIS-RT-02",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "check",
+          "answer": {
+            "action": "amount",
+            "amount": 400,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.5,
+          "maxHelpUsed": 0,
+          "answerRevealed": false,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": true,
+          "ineligibleReason": null,
+          "createdAt": "2026-09-19T09:00:00.000Z",
+          "submittedAt": "2026-09-19T09:05:00.000Z",
+          "origin": "demo_seed",
+          "teachingAttemptId": "GROWTH-TEACH-01"
+        },
+        {
+          "id": "GROWTH-PRACTICE-01",
+          "caseId": "HIS-AI-01",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 200,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 2,
+          "answerRevealed": true,
+          "aiDraftRevealed": true,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-21T09:00:00.000Z",
+          "submittedAt": "2026-09-21T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-PRACTICE-02",
+          "caseId": "HIS-AI-02",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 200,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 2,
+          "answerRevealed": true,
+          "aiDraftRevealed": true,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-22T09:00:00.000Z",
+          "submittedAt": "2026-09-22T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-PRACTICE-03",
+          "caseId": "HIS-AI-03",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 500,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 2,
+          "answerRevealed": true,
+          "aiDraftRevealed": true,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-23T09:00:00.000Z",
+          "submittedAt": "2026-09-23T09:05:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-PRACTICE-04",
+          "caseId": "HIS-AI-04",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "growth-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 300,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 2,
+          "answerRevealed": true,
+          "aiDraftRevealed": true,
+          "disclosureAtSubmission": {
+            "answer": false,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-24T09:00:00.000Z",
+          "submittedAt": "2026-09-24T09:05:00.000Z",
+          "origin": "demo_seed"
+        }
+      ],
+      "aiReviewEvents": [
+        {
+          "id": "GROWTH-REVIEW-01",
+          "revealId": "GROWTH-REVEAL-01",
+          "attemptId": "GROWTH-PRACTICE-01",
+          "caseId": "HIS-AI-01",
+          "caseVersion": 1,
+          "draftIsCorrect": false,
+          "revealedAt": "2026-09-21T09:06:00.000Z",
+          "decision": "accept",
+          "decidedAt": "2026-09-21T09:07:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-REVIEW-02",
+          "revealId": "GROWTH-REVEAL-02",
+          "attemptId": "GROWTH-PRACTICE-02",
+          "caseId": "HIS-AI-02",
+          "caseVersion": 1,
+          "draftIsCorrect": false,
+          "revealedAt": "2026-09-22T09:06:00.000Z",
+          "decision": "correct",
+          "decidedAt": "2026-09-22T09:07:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-REVIEW-03",
+          "revealId": "GROWTH-REVEAL-03",
+          "attemptId": "GROWTH-PRACTICE-03",
+          "caseId": "HIS-AI-03",
+          "caseVersion": 1,
+          "draftIsCorrect": false,
+          "revealedAt": "2026-09-23T09:06:00.000Z",
+          "decision": "correct",
+          "decidedAt": "2026-09-23T09:07:00.000Z",
+          "origin": "demo_seed"
+        },
+        {
+          "id": "GROWTH-REVIEW-04",
+          "revealId": "GROWTH-REVEAL-04",
+          "attemptId": "GROWTH-PRACTICE-04",
+          "caseId": "HIS-AI-04",
+          "caseVersion": 1,
+          "draftIsCorrect": false,
+          "revealedAt": "2026-09-24T09:06:00.000Z",
+          "decision": "correct",
+          "decidedAt": "2026-09-24T09:07:00.000Z",
+          "origin": "demo_seed"
+        }
+      ],
+      "experienceCards": [],
+      "reviewConcerns": []
+    },
+    {
+      "id": "support-restoration",
+      "label": "Support restoration: simulated teaching (demo_seed); the live retention result is a demonstration, not a delayed study",
+      "skillId": "cross-period-expense-allocation",
+      "stageId": "restoration-stage-1",
+      "supportLevel": 2,
+      "teachingAttempts": [
+        {
+          "id": "RESTORATION-TEACH-01",
+          "caseId": "HIS-TEACH-01",
+          "caseVersion": 1,
+          "skillId": "cross-period-expense-allocation",
+          "stageId": "restoration-stage-1",
+          "mode": "practice",
+          "answer": {
+            "action": "amount",
+            "amount": 300,
+            "evidenceIds": [
+              "service",
+              "total",
+              "target"
+            ],
+            "rationaleId": "uniform-service"
+          },
+          "confidence": 0.75,
+          "maxHelpUsed": 4,
+          "answerRevealed": true,
+          "aiDraftRevealed": false,
+          "disclosureAtSubmission": {
+            "answer": true,
+            "aiDraft": false
+          },
+          "priorExposure": false,
+          "status": "submitted",
+          "correct": true,
+          "eligible": false,
+          "ineligibleReason": "practice",
+          "createdAt": "2026-09-20T09:00:00.000Z",
+          "submittedAt": "2026-09-20T09:05:00.000Z",
+          "origin": "demo_seed"
+        }
+      ],
+      "attempts": [],
+      "aiReviewEvents": [],
+      "experienceCards": [],
+      "reviewConcerns": [],
+      "retentionCaseId": "RT-01",
+      "retentionTeachingAttemptId": "RESTORATION-TEACH-01",
+      "retentionAvailableAt": "2026-09-23T09:05:00.000Z"
+    }
+  ]
+}

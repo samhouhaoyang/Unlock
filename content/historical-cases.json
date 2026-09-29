@@ -1,0 +1,1088 @@
+{
+  "schemaVersion": 1,
+  "label": "Authored historical definitions for simulated observations; not interactive tasks",
+  "historicalCases": [
+    {
+      "id": "HIS-RG-01",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-01",
+      "unit": "AUD",
+      "targetPeriod": "2026-01",
+      "interactive": false,
+      "allocation": {
+        "total": 600,
+        "serviceMonths": [
+          "2026-01",
+          "2026-02"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-01, 2026-02 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 600."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-01."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 300,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 300; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RG-02",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-02",
+      "unit": "AUD",
+      "targetPeriod": "2026-03",
+      "interactive": false,
+      "allocation": {
+        "total": 600,
+        "serviceMonths": [
+          "2026-02",
+          "2026-03",
+          "2026-04"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-02, 2026-03, 2026-04 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 600."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-03."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 200,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 200; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RG-03",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-03",
+      "unit": "AUD",
+      "targetPeriod": "2026-06",
+      "interactive": false,
+      "allocation": {
+        "total": 600,
+        "serviceMonths": [
+          "2026-04",
+          "2026-05",
+          "2026-06",
+          "2026-07",
+          "2026-08",
+          "2026-09"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-04, 2026-05, 2026-06, 2026-07, 2026-08, 2026-09 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 600."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-06."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 100,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 100; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RG-04",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-04",
+      "unit": "AUD",
+      "targetPeriod": "2026-07",
+      "interactive": false,
+      "allocation": {
+        "total": 1000,
+        "serviceMonths": [
+          "2026-05",
+          "2026-06",
+          "2026-07",
+          "2026-08"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-05, 2026-06, 2026-07, 2026-08 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 1000."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-07."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 250,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 250; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RG-05",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-05",
+      "unit": "AUD",
+      "targetPeriod": "2026-09",
+      "interactive": false,
+      "allocation": {
+        "total": 900,
+        "serviceMonths": [
+          "2026-10",
+          "2026-11",
+          "2026-12"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-10, 2026-11, 2026-12 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 900."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-09."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 0,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "service-not-started"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "service-not-started",
+          "text": "No service is delivered in the target month, so its expense is zero."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 0; select service, total, and target with service-not-started."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RG-06",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "regular",
+      "title": "Historical fictional case HIS-RG-06",
+      "unit": "AUD",
+      "targetPeriod": "2026-06",
+      "interactive": false,
+      "allocation": {
+        "total": 360,
+        "serviceMonths": [
+          "2026-05",
+          "2026-06",
+          "2026-07"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-05, 2026-06, 2026-07 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 360."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-06."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 120,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 120; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RT-01",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "retention",
+      "title": "Historical fictional case HIS-RT-01",
+      "unit": "AUD",
+      "targetPeriod": "2026-08",
+      "interactive": false,
+      "allocation": {
+        "total": 450,
+        "serviceMonths": [
+          "2026-07",
+          "2026-08",
+          "2026-09"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-07, 2026-08, 2026-09 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 450."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-08."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 150,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 150; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-RT-02",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "retention",
+      "title": "Historical fictional case HIS-RT-02",
+      "unit": "AUD",
+      "targetPeriod": "2026-05",
+      "interactive": false,
+      "allocation": {
+        "total": 1200,
+        "serviceMonths": [
+          "2026-04",
+          "2026-05",
+          "2026-06"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-04, 2026-05, 2026-06 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 1200."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-05."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 400,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 400; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-TEACH-01",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "demonstration",
+      "title": "Historical fictional case HIS-TEACH-01",
+      "unit": "AUD",
+      "targetPeriod": "2026-08",
+      "interactive": false,
+      "allocation": {
+        "total": 600,
+        "serviceMonths": [
+          "2026-08",
+          "2026-09"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-08, 2026-09 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 600."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-08."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 300,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 300; select service, total, and target with uniform-service."
+      },
+      "aiDraft": null,
+      "draftOrigin": null
+    },
+    {
+      "id": "HIS-AI-01",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "practice",
+      "title": "Historical fictional case HIS-AI-01",
+      "unit": "AUD",
+      "targetPeriod": "2026-06",
+      "interactive": false,
+      "allocation": {
+        "total": 600,
+        "serviceMonths": [
+          "2026-05",
+          "2026-06",
+          "2026-07"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-05, 2026-06, 2026-07 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 600."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-06."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice is issued in the target month; it does not change the service period."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 200,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice date by itself."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        },
+        {
+          "id": "invoice-controls",
+          "text": "Recognize the whole price in the invoice month."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 200; select service, total, and target with uniform-service."
+      },
+      "aiDraft": {
+        "text": "Preset historical training draft with a deliberate error: expense the full AUD 600 in the invoice month.",
+        "answer": {
+          "action": "amount",
+          "amount": 600,
+          "evidenceIds": [
+            "invoice"
+          ],
+          "rationaleId": "invoice-controls"
+        },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "HIS-AI-02",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "practice",
+      "title": "Historical fictional case HIS-AI-02",
+      "unit": "AUD",
+      "targetPeriod": "2026-05",
+      "interactive": false,
+      "allocation": {
+        "total": 800,
+        "serviceMonths": [
+          "2026-04",
+          "2026-05",
+          "2026-06",
+          "2026-07"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-04, 2026-05, 2026-06, 2026-07 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 800."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-05."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice is issued in the target month; it does not change the service period."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 200,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice date by itself."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        },
+        {
+          "id": "invoice-controls",
+          "text": "Recognize the whole price in the invoice month."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 200; select service, total, and target with uniform-service."
+      },
+      "aiDraft": {
+        "text": "Preset historical training draft with a deliberate error: expense the full AUD 800 in the invoice month.",
+        "answer": {
+          "action": "amount",
+          "amount": 800,
+          "evidenceIds": [
+            "invoice"
+          ],
+          "rationaleId": "invoice-controls"
+        },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "HIS-AI-03",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "practice",
+      "title": "Historical fictional case HIS-AI-03",
+      "unit": "AUD",
+      "targetPeriod": "2026-07",
+      "interactive": false,
+      "allocation": {
+        "total": 1000,
+        "serviceMonths": [
+          "2026-06",
+          "2026-07"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-06, 2026-07 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 1000."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-07."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice is issued in the target month; it does not change the service period."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 500,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice date by itself."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        },
+        {
+          "id": "invoice-controls",
+          "text": "Recognize the whole price in the invoice month."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 500; select service, total, and target with uniform-service."
+      },
+      "aiDraft": {
+        "text": "Preset historical training draft with a deliberate error: expense the full AUD 1000 in the invoice month.",
+        "answer": {
+          "action": "amount",
+          "amount": 1000,
+          "evidenceIds": [
+            "invoice"
+          ],
+          "rationaleId": "invoice-controls"
+        },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "HIS-AI-04",
+      "version": 1,
+      "skillId": "cross-period-expense-allocation",
+      "type": "practice",
+      "title": "Historical fictional case HIS-AI-04",
+      "unit": "AUD",
+      "targetPeriod": "2026-08",
+      "interactive": false,
+      "allocation": {
+        "total": 900,
+        "serviceMonths": [
+          "2026-07",
+          "2026-08",
+          "2026-09"
+        ],
+        "uniformMonthlyValue": true
+      },
+      "facts": [
+        {
+          "id": "service",
+          "text": "Fictional contract: service is provided uniformly with equal monthly value in 2026-07, 2026-08, 2026-09 only."
+        },
+        {
+          "id": "total",
+          "text": "Total service price: AUD 900."
+        },
+        {
+          "id": "target",
+          "text": "Determine the expense belonging to 2026-08."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice is issued in the target month; it does not change the service period."
+        }
+      ],
+      "allowedActions": [
+        "amount"
+      ],
+      "acceptedAnswers": [
+        {
+          "action": "amount",
+          "amount": 300,
+          "evidenceIds": [
+            "service",
+            "total",
+            "target"
+          ],
+          "rationaleId": "uniform-service"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "service",
+          "text": "The explicit equal-value service months."
+        },
+        {
+          "id": "total",
+          "text": "The total price for the service period."
+        },
+        {
+          "id": "target",
+          "text": "The period the question asks about."
+        },
+        {
+          "id": "invoice",
+          "text": "The invoice date by itself."
+        }
+      ],
+      "rationales": [
+        {
+          "id": "uniform-service",
+          "text": "Allocate equally across the explicitly uniform service months; the target month is included."
+        },
+        {
+          "id": "invoice-controls",
+          "text": "Recognize the whole price in the invoice month."
+        }
+      ],
+      "hints": {
+        "L1": "Check the service dates against the target month.",
+        "L2": "Use delivered service, and only use equal monthly allocation when the contract explicitly supports it.",
+        "L3": "List the service months, find whether the target is included, then allocate the total if it is.",
+        "L4": "The target-period expense is AUD 300; select service, total, and target with uniform-service."
+      },
+      "aiDraft": {
+        "text": "Preset historical training draft with a deliberate error: expense the full AUD 900 in the invoice month.",
+        "answer": {
+          "action": "amount",
+          "amount": 900,
+          "evidenceIds": [
+            "invoice"
+          ],
+          "rationaleId": "invoice-controls"
+        },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    }
+  ]
+}
