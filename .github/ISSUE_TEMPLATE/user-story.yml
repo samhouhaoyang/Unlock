@@ -1,0 +1,39 @@
+name: User story
+description: A complete, verifiable behavior with one owner and explicit prerequisites
+title: "[P0] "
+labels: ["story", "needs-triage"]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: User and observable outcome
+      placeholder: "As a learner, I can ... so that ..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "Include the happy path, uncertainty/failure, and verification."
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Blocked by
+      description: "List issue numbers, or None. Also set the native Relationships → Blocked by links."
+    validations:
+      required: true
+  - type: textarea
+    id: ownership
+    attributes:
+      label: Owner, reviewer, branch, and allowed paths
+      description: "One owner; the other developer reviews. Identify any shared-contract change."
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification and out of scope
+    validations:
+      required: true

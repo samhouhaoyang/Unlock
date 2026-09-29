@@ -1,0 +1,4 @@
+# Intended reviewers for a supported GitHub plan. Request peer review manually
+# while this private repository's current plan does not enable code owners.
+# Actual implementation ownership and allowed paths are in docs/backlog.json.
+* @samhouhaoyang @RankiiJ

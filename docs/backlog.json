@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "repository": "samhouhaoyang/Unlock",
+  "milestone": "P0 — three-day demonstration",
+  "trackingIssueNumber": 1,
+  "owners": [
+    "samhouhaoyang",
+    "RankiiJ"
+  ],
+  "stories": [
+    {
+      "id": "SETUP",
+      "title": "[Setup] Publish the shared baseline, CI, and assigned dependency graph",
+      "owner": "samhouhaoyang",
+      "reviewer": "RankiiJ",
+      "branch": "chore/team-ci-setup",
+      "kind": "infrastructure",
+      "dependsOn": [],
+      "paths": [
+        ".github/",
+        "scripts/",
+        "docs/",
+        "AGENTS.md",
+        "README.md",
+        "PLAN.md",
+        "CONTEXT.md",
+        "product.md",
+        "product.en.md",
+        "pitch.md",
+        "pitch.en.md",
+        ".gitignore",
+        ".nvmrc",
+        ".gitattributes"
+      ],
+      "story": "As a developer, I can find the agreed product, run the repository checks, and select an assigned issue whose prerequisites are complete.",
+      "acceptance": [
+        "Canonical documentation is available on the repository's main branch.",
+        "CI checks repository documentation and the issue graph, and runs app quality gates once a package manifest exists.",
+        "Pull requests must reference a real issue and the dependency check fails while that issue has open blockers.",
+        "All P0 stories have one owner, a peer reviewer, explicit file ownership, and native GitHub dependencies.",
+        "A peer-review and required-check rule protects main if the repository plan supports it; any platform restriction is documented accurately."
+      ],
+      "verification": "Run node scripts/check-project.mjs and observe a successful GitHub Actions run. Verify issue assignees and native dependencies through the GitHub API.",
+      "scope": "Repository setup only; no application feature is claimed as implemented.",
+      "number": 2,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/2"
+    },
+    {
+      "id": "FOUNDATION",
+      "title": "[P0] Open a persistent four-page demo shell with shared contracts",
+      "owner": "samhouhaoyang",
+      "reviewer": "RankiiJ",
+      "branch": "feat/demo-foundation",
+      "kind": "foundation",
+      "dependsOn": [
+        "SETUP"
+      ],
+      "paths": [
+        "src/app/",
+        "src/contracts/",
+        "src/runtime/",
+        "src/features/",
+        "package.json",
+        "package-lock.json",
+        "index.html",
+        "vite.config.ts",
+        "tsconfig.json",
+        "tsconfig.app.json",
+        "tsconfig.node.json",
+        "eslint.config.js",
+        "vitest.config.ts",
+        "README.md",
+        ".gitignore"
+      ],
+      "story": "As a demo participant, I can choose a labelled scenario, navigate the four page slots, switch simulated roles, and reset or resume the same local demo.",
+      "acceptance": [
+        "Scaffold the agreed React, TypeScript, and Vite app with npm ci, dev, typecheck, lint, test, build, and preview scripts; commit the lockfile.",
+        "Implement contract v1 from docs/contracts.md and the shared local persistence transaction interface; export stable feature interfaces.",
+        "Create the four page slots and feature entry placeholders listed in the contract; placeholders say not implemented and have no fake completion action.",
+        "Select start-from-zero, growth-checkpoint, or restoration scenarios without claiming unimplemented learning behavior; the role switch remains visibly a same-browser simulation.",
+        "Persist through one runtime adapter; a failed write reports failure without silently committing only part of the state; reset selects a fresh run and retains scenario/source labels.",
+        "Meaningful runtime tests verify refresh restoration, reset isolation, unknown schema handling, and storage failure; existing CI remains green.",
+        "Limit src/features/ edits to initial entry placeholders; subsequent issues own those directories."
+      ],
+      "verification": "Run npm ci, npm run typecheck, npm run lint, npm test, and npm run build. Open all four slots, switch roles, refresh, reset, and test a storage failure.",
+      "scope": "Freeze contracts and shell first. No grading engine, full learner flow, mentor workflow, or automatic advancement belongs in this issue.",
+      "number": 3,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/3"
+    },
+    {
+      "id": "CONTENT",
+      "title": "[P0] Supply the six reviewed cases and reproducible demo histories",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "feat/reviewed-case-content",
+      "kind": "story",
+      "dependsOn": [
+        "SETUP"
+      ],
+      "paths": [
+        "content/",
+        "scripts/check-content.mjs",
+        "scripts/tests/content.test.mjs",
+        "docs/content-review.md"
+      ],
+      "story": "As a learner or presenter, I receive internally consistent fictional cases, reviewed hints, and clearly labelled demonstration history.",
+      "acceptance": [
+        "Create the six interactive cases EX-01, WK-01, CK-01, TR-01, UN-01, and RT-01 using the JSON contract in docs/contracts.md and product section 8.",
+        "Include facts, accepted structured answers, evidence and rationale IDs, L1–L4 hints, draft truth/origin, task routing data, and case/skill mappings.",
+        "Publish four task cards and three skill-card definitions; only cross-period expense allocation has a complete learning path.",
+        "Growth seed has eight eligible checks in one stage: six correct at 75% and two correct at 50%, with two distinct regular checks and linked retention at least 72 hours after teaching; E3 is missing.",
+        "Historical case IDs are distinct from the six interactive IDs; four AI review events yield a labelled historical 1/4 wrong-draft acceptance count and do not enter E5.",
+        "Restoration seed has a valid teaching/retention link; start-from-zero has no historical evidence; all scenario provenance is explicit.",
+        "The dependency-free content checker verifies references, structured answers, teaching links, timestamps, and the documented Brier values.",
+        "Record who reviewed the content and whether review was team-only; do not claim an external accounting review."
+      ],
+      "verification": "Run node scripts/check-content.mjs and node --test scripts/tests/content.test.mjs before an app scaffold exists. Confirm WK-01=400, TR-01=0, RT-01=500 and that UN-01 needs more information.",
+      "scope": "JSON content and its validator can begin immediately, using contract v1. Do not change application types, app shell, package files, or CI workflow.",
+      "number": 4,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/4"
+    },
+    {
+      "id": "PRACTICE",
+      "title": "[P0] Review WK-01 with staged help and persistent judgment",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "feat/judgment-workbench",
+      "kind": "story",
+      "dependsOn": [
+        "FOUNDATION",
+        "CONTENT"
+      ],
+      "paths": [
+        "src/features/learning/"
+      ],
+      "story": "As Lin, I can make a judgment, choose confidence, obtain appropriate help, and then accept, correct, or request information about the AI draft.",
+      "acceptance": [
+        "WK-01 renders case facts, answer/action, evidence and reason choices, prior confidence, and the five-level support display.",
+        "The AI draft stays hidden until judgment submission; confidence is immutable after submission; refresh never reveals information early.",
+        "At L2, offer L1 or L2 hints directly and record actual maximum help used; demonstration escape records L3/L4 assistance without altering the configured level.",
+        "Grade structured amount/action plus evidence and rationale using reviewed content; a right amount with a wrong reason is not an independent success.",
+        "Persist draft disclosure and accept/correct/need_info review events exactly once; an incorrect draft contributes to the metric only once revealed.",
+        "Practice attempts never count toward E1 or E5; source labels survive refresh and repeated actions are idempotent.",
+        "Expose the learner commands and view specified by contract v1 for later live integration; feature behavior works from its own route without needing a completed mentor flow."
+      ],
+      "verification": "Run feature tests plus the repository gates. Exercise WK-01 at desktop and narrow widths using keyboard only; refresh before and after reveal, request help, correct the 1,200 draft to 400, and repeat submission.",
+      "scope": "Own the complete learner practice slice. Leave progress evaluation, mentor state, metrics, and cross-feature orchestration to their owners.",
+      "number": 5,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/5"
+    },
+    {
+      "id": "MENTOR",
+      "title": "[P0] Preview a help request and publish a reviewed experience card",
+      "owner": "samhouhaoyang",
+      "reviewer": "RankiiJ",
+      "branch": "feat/mentor-experience-loop",
+      "kind": "story",
+      "dependsOn": [
+        "FOUNDATION",
+        "CONTENT"
+      ],
+      "paths": [
+        "src/features/mentoring/"
+      ],
+      "story": "As Lin and Supervisor Chen, we can share a precise question, exchange a reasoned reply, and choose whether to publish reusable experience.",
+      "acceptance": [
+        "A learner can select context, edit the question, and preview the exact help request before sending; cancelling produces no shared request.",
+        "The mentor sees only that previewed content and summary evidence, not all private attempts.",
+        "A reply creates a fixed-template experience-card draft using the mentor's own words; allow edit, publish, and reply-only.",
+        "A published card is an independent approved content copy with source attribution, applicability, exception, and version; private transcript access is not inherited.",
+        "Unpublished, disputed, and retired cards are excluded from shared feedback selectors; publishing is idempotent and persists across refresh.",
+        "Provide the request composer, mentor page, and published-feedback selector through the agreed interface.",
+        "Demonstrate the complete request-to-card workflow using an explicitly labelled sample attempt on the standalone feature route; live WK-01 wiring belongs to integration."
+      ],
+      "verification": "Run feature tests and repository gates. Check cancel/send/reply-only/publish flows, refresh, private-context separation, and duplicate publication.",
+      "scope": "No model call, multi-user authentication, open knowledge search, or global store rewrite.",
+      "number": 6,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/6"
+    },
+    {
+      "id": "CHECKS",
+      "title": "[P0] Complete a fresh independent check without answer leakage",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "feat/independent-checks",
+      "kind": "story",
+      "dependsOn": [
+        "PRACTICE"
+      ],
+      "paths": [
+        "src/features/learning/"
+      ],
+      "story": "As Lin, I can attempt TR-01 independently, receive feedback after submitting, and obtain help by leaving the challenge.",
+      "acceptance": [
+        "A fresh TR-01 hides relevant help, answer, AI draft, and experience feedback until submission.",
+        "Correctly grade zero expense in December from the structured choices and preserve the prior confidence.",
+        "Record independence at submission; later feedback preserves this check's eligibility but makes subsequent attempts at the same case practice-only.",
+        "Exposure persists across refresh and stages; changing a case version or reopening it does not create a fresh case.",
+        "Exiting to view a demonstration records assisted learning, not a scored failure or independent success.",
+        "An interrupted unseen check resumes its existing attempt without duplicate observations; unknown case versions remain ungraded.",
+        "If no fresh suitable case remains, show missing evidence and allow practice; no automatic question generation.",
+        "Expose the submitted attempt to the integration coordinator through contract v1; progression is handled by the progress feature."
+      ],
+      "verification": "Run feature tests for exposure, interruption, exit, duplicate submissions, and refresh. Complete a 75%-confidence TR-01, view feedback, and prove a retry cannot produce independent evidence.",
+      "scope": "Extend the same learning module after practice merges; do not change evidence thresholds or the progress engine.",
+      "number": 7,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/7"
+    },
+    {
+      "id": "PROGRESS",
+      "title": "[P0] Explain support fading, restoration, and mentor review",
+      "owner": "samhouhaoyang",
+      "reviewer": "RankiiJ",
+      "branch": "feat/evidence-progress",
+      "kind": "story",
+      "dependsOn": [
+        "FOUNDATION",
+        "CONTENT"
+      ],
+      "paths": [
+        "src/features/progress/"
+      ],
+      "story": "As Lin and my mentor, we can see why a support level changed, what evidence remains missing, and why further fading is blocked.",
+      "acceptance": [
+        "Implement E1–E5 from the product and accepted decisions through a pure evaluator over the agreed attempt, stage, exposure, teaching-link, and concern records.",
+        "Growth history plus a qualifying TR-01 produces exactly one L2→L1 transition; store the closing-stage evidence snapshot and begin a fresh pending stage.",
+        "Transfer/retention failure restores support once; a simultaneous 90%-confidence error creates a concern without applying a second restoration.",
+        "At L0/L4, clamp level changes without creating a fictitious stage; failed evidence cannot remain marked passed.",
+        "Mentor resolution records actor/time/reason, keeps the original error, and does not grant a pass; unresolved concerns survive stage changes.",
+        "The growth page shows current-stage pending evidence separately from the completed stage's transition explanation, with dates, types, sample sizes, and origin labels.",
+        "Retention linkage is immutable; later teaching does not reset completed evidence in the same stage; old stage evidence cannot satisfy new gates.",
+        "The complete feature can be verified with labelled fixtures and an explicit demonstration harness before live integration."
+      ],
+      "verification": "Run meaningful evaluator and growth-view tests covering the accepted decision table, seed Brier=0.109375, ninth-record Brier≈0.1042, idempotency, failed retention, high-confidence concerns, and stage boundaries.",
+      "scope": "Own the progress engine and growth presentation. Do not write learner attempt state or mentoring state; the shared coordinator connects them later.",
+      "number": 8,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/8"
+    },
+    {
+      "id": "OPPORTUNITIES",
+      "title": "[P0] Route work opportunities and demonstrate a correct AI draft",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "feat/work-opportunities",
+      "kind": "story",
+      "dependsOn": [
+        "PRACTICE"
+      ],
+      "paths": [
+        "src/features/opportunities/",
+        "src/features/learning/"
+      ],
+      "story": "As Lin, I can understand why a task is assigned to me, AI, or a mentor, and practise accepting a correct AI draft as well as correcting an incorrect one.",
+      "acceptance": [
+        "Render four fixed tasks in the learning-value × delivery-risk view with a text explanation for each route.",
+        "High-risk delivery belongs to the mentor; practice-copy labels do not imply real business execution.",
+        "Open WK-01 through the learner interface; other explanatory task cards have no fake completion action.",
+        "Expose CK-01 as the correct-draft contrast and accept 100 with the reviewed rationale without teaching blanket AI rejection.",
+        "Preview UN-01's missing performance evidence without making it a second mandatory live graded question.",
+        "Show three skill cards and label the two incomplete learning paths as example states.",
+        "Use the frozen entry points so app-shell files do not need concurrent edits."
+      ],
+      "verification": "Run routing and correct-draft tests. Check the four routes, WK-01 navigation, CK-01 acceptance, UN-01 preview, keyboard focus, and narrow-screen layout.",
+      "scope": "Only this owner may extend learner entry behavior. It can follow PRACTICE independently of the mentor/progress branches; do not work on it concurrently with another unmerged branch touching learning.",
+      "number": 9,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/9"
+    },
+    {
+      "id": "METRICS",
+      "title": "[P0] Show honest mentor metrics and learning trends",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "feat/mentor-metrics",
+      "kind": "story",
+      "dependsOn": [
+        "FOUNDATION",
+        "CONTENT"
+      ],
+      "paths": [
+        "src/features/insights/"
+      ],
+      "story": "As a mentor, I can distinguish assisted performance, independent checks, wrong-draft acceptance, and simulated observations.",
+      "acceptance": [
+        "Compute the wrong-draft acceptance tile from known-incorrect drafts actually revealed, separating session and demo_seed events.",
+        "Expose zero denominators honestly; CK-01 correct drafts do not enter the wrong-draft denominator.",
+        "Compute assistance trends from actual maximum help on submitted practice attempts and independent correctness from eligible check outcomes.",
+        "Display sample size, source and case type, with explicit counts for assisted exits, interruptions, and ungraded records.",
+        "Show high-confidence errors separately; do not infer copying, motivation, or statistical mastery from the curves.",
+        "Historical and live observations have both visual and text distinctions; mentors receive summaries rather than private transcripts.",
+        "The metrics panel works from agreed read-only state and fixtures and needs no changes to learner, mentor, or progress internals."
+      ],
+      "verification": "Run selector tests for zero denominator, duplicate reveal, known-correct drafts, assistance versus configured level, mixed origins, and ineligible attempts. Inspect desktop and narrow-screen presentation.",
+      "scope": "Own the insights slice. The final integration mounts it in the mentor view through the predeclared slot.",
+      "number": 10,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/10"
+    },
+    {
+      "id": "INTEGRATION",
+      "title": "[P0] Connect the live practice–mentor–transfer demonstration",
+      "owner": "samhouhaoyang",
+      "reviewer": "RankiiJ",
+      "branch": "feat/live-demo-integration",
+      "kind": "integration",
+      "dependsOn": [
+        "MENTOR",
+        "CHECKS",
+        "PROGRESS",
+        "OPPORTUNITIES",
+        "METRICS"
+      ],
+      "paths": [
+        "src/app/",
+        "src/runtime/",
+        "tests/integration/",
+        "docs/demo-runbook.md",
+        "README.md"
+      ],
+      "story": "As a presenter, I can run the full three-minute story with real persisted changes from each feature and replay it from reset.",
+      "acceptance": [
+        "Compose WK-01 judgment/review, the actual previewed help request, mentor publication, fresh TR-01, experience feedback, and one support transition.",
+        "Submission grading and progress evaluation commit in one persisted transaction; failures cannot leave a half-updated attempt/stage and retries cannot duplicate effects.",
+        "TR-01 feedback cites the latest eligible published card after submission only; peer feature callbacks are wired through the agreed interfaces.",
+        "Render the real opportunity view, growth state, mentor metrics, and live session 0/1 beside simulated 1/4; do not substitute a seeded card for the card just published.",
+        "At L1, show the next practice with L1 available and L2 withdrawn; the closed stage's proof and new stage's pending evidence remain distinguishable.",
+        "Reset success and restoration scenarios independently; preserve simulation labels and source distinctions across refresh.",
+        "Complete integration tests for the success path, restoration path, repeated submission, refresh before reveal, and interrupted write.",
+        "Update the demo runbook with exact click paths and actual verification results."
+      ],
+      "verification": "Run npm ci, typecheck, lint, tests, and build. Follow the three-minute script twice from reset and run the separate RT-01 failure demonstration.",
+      "scope": "This is the sole cross-feature wiring issue. A defect inside another feature goes to its owner; do not silently rewrite their module while they have active work.",
+      "number": 11,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/11"
+    },
+    {
+      "id": "RELEASE",
+      "title": "[P0] Verify the accessible demo and record the delivery handoff",
+      "owner": "RankiiJ",
+      "reviewer": "samhouhaoyang",
+      "branch": "test/demo-release-check",
+      "kind": "release",
+      "dependsOn": [
+        "INTEGRATION"
+      ],
+      "paths": [
+        "tests/e2e/",
+        "docs/release-checklist.md",
+        "docs/demo-runbook.md"
+      ],
+      "story": "As the team, we can confidently demonstrate the accepted P0 on desktop and narrow screens and explain exactly what was verified.",
+      "acceptance": [
+        "Verify the product section 14 checklist against the integrated app, including keyboard operation, visible focus, enlarged text, source labels, and privacy previews.",
+        "Rehearse the full success path twice and the separate restoration branch; record timing and results rather than claiming unrun checks.",
+        "Record team-only content review and any observed participant feedback with actual sample counts; do not fabricate user research.",
+        "Record the chosen preview/deployment URL only once it is live and verified, plus the tested local backup commands; coordinate hosting changes with the integrator.",
+        "File concrete failing behaviors as follow-up issues owned by the responsible feature owner; do not close this issue while a demo-blocking defect is open.",
+        "Human reviewer confirms the delivered scope and the final demonstration handoff."
+      ],
+      "verification": "Human walkthrough plus available end-to-end checks. Record browser/viewports, commit, actual results, remaining limitations, and the accessible demo or local fallback.",
+      "scope": "Human acceptance and handoff. Hosting selection is coordinated with @samhouhaoyang; this issue does not authorize unreviewed feature rewrites.",
+      "number": 12,
+      "url": "https://github.com/samhouhaoyang/Unlock/issues/12"
+    }
+  ]
+}
