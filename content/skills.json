@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    { "id": "service-period-recognition", "title": "Recognize the service period", "illustrative": true, "learningPath": "example", "label": "Example state; complete learning path is not implemented" },
+    { "id": "cross-period-expense-allocation", "title": "Cross-period expense allocation", "illustrative": false, "learningPath": "complete", "label": "The one complete P0 learning path" },
+    { "id": "missing-information-recognition", "title": "Recognize missing information", "illustrative": true, "learningPath": "example", "label": "Example state; complete learning path is not implemented" }
+  ]
+}

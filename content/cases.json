@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "label": "Fictional training cases; authored hints and preset AI drafts",
+  "cases": [
+    {
+      "id": "EX-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "demonstration",
+      "title": "A complete example: one month of a two-month service",
+      "unit": "AUD", "targetPeriod": "2026-08",
+      "facts": [
+        { "id": "service", "text": "Fictional contract: service is provided uniformly during August and September 2026, with equal value in each month." },
+        { "id": "total", "text": "The total price for the two service months is AUD 600. What expense belongs to August?" }
+      ],
+      "allowedActions": ["amount"],
+      "acceptedAnswers": [{ "action": "amount", "amount": 300, "evidenceIds": ["service", "total"], "rationaleId": "uniform-service" }],
+      "evidence": [
+        { "id": "service", "text": "Two service months, with equal service value in each." },
+        { "id": "total", "text": "Total service price: AUD 600." },
+        { "id": "cash-date", "text": "Use the payment date alone to select the expense period." }
+      ],
+      "rationales": [
+        { "id": "uniform-service", "text": "The explicitly uniform service gives each service month an equal share of the total price." },
+        { "id": "cash-basis", "text": "Recognize the full price in whichever month payment occurs." }
+      ],
+      "hints": {
+        "L1": "Compare the target month with the service dates and the total price.",
+        "L2": "Use the service delivery period; equal monthly allocation is justified here by the explicit uniform-service assumption.",
+        "L3": "There are two equally served months. Complete the calculation: 600 divided by __ months.",
+        "L4": "August expense is AUD 300: 600 / 2. The service and total-price facts support the uniform-service rationale."
+      },
+      "aiDraft": null, "draftOrigin": null
+    },
+    {
+      "id": "WK-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "practice",
+      "title": "Review December expense despite a December invoice",
+      "unit": "AUD", "targetPeriod": "2026-12",
+      "facts": [
+        { "id": "service", "text": "Fictional contract: service is provided uniformly in October, November, and December 2026, with equal value each month." },
+        { "id": "total", "text": "The three-month service costs AUD 1,200 in total." },
+        { "id": "prior-accruals", "text": "October and November expenses have each already been correctly accrued. The question asks only for the expense belonging to December service." },
+        { "id": "invoice", "text": "The supplier issues the invoice in December." }
+      ],
+      "allowedActions": ["amount"],
+      "acceptedAnswers": [{ "action": "amount", "amount": 400, "evidenceIds": ["service", "total", "prior-accruals"], "rationaleId": "service-not-invoice" }],
+      "evidence": [
+        { "id": "service", "text": "Three months of equal service value, including December." },
+        { "id": "total", "text": "The total price is AUD 1,200 for the whole service period." },
+        { "id": "prior-accruals", "text": "The prior two months were already correctly accrued; December is the target." },
+        { "id": "invoice", "text": "The invoice was issued in December." }
+      ],
+      "rationales": [
+        { "id": "service-not-invoice", "text": "Allocate by the explicitly uniform service period. The invoice month does not move October and November service into December." },
+        { "id": "invoice-controls", "text": "The full invoiced total belongs to the invoice month." },
+        { "id": "already-complete", "text": "Accruing prior months means no service expense remains for December." }
+      ],
+      "hints": {
+        "L1": "Compare the invoice date with the service months and the prior accruals.",
+        "L2": "Identify the service delivered in the target month; the invoice date alone does not determine expense allocation.",
+        "L3": "Build an October–November–December table. Equal monthly service means 1,200 / __; the first two months are already accrued.",
+        "L4": "December expense is AUD 400: 1,200 / 3. Select service, total, and prior-accruals with service-not-invoice; correct the preset 1,200 draft."
+      },
+      "aiDraft": {
+        "text": "Preset training draft with a deliberate error: record all AUD 1,200 as December expense because the invoice arrived in December.",
+        "answer": { "action": "amount", "amount": 1200, "evidenceIds": ["invoice"], "rationaleId": "invoice-controls" },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "CK-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "practice",
+      "title": "Accept a correct monthly allocation",
+      "unit": "AUD", "targetPeriod": "2026-06",
+      "facts": [
+        { "id": "service", "text": "Fictional contract: service is provided uniformly from April through September 2026, six months with equal value." },
+        { "id": "total", "text": "The six-month service costs AUD 600 in total. What expense belongs to June?" }
+      ],
+      "allowedActions": ["amount"],
+      "acceptedAnswers": [{ "action": "amount", "amount": 100, "evidenceIds": ["service", "total"], "rationaleId": "uniform-service" }],
+      "evidence": [
+        { "id": "service", "text": "June is one of six equally served months." },
+        { "id": "total", "text": "Total service price: AUD 600." },
+        { "id": "reject-ai", "text": "Reject a draft because it was produced by AI." }
+      ],
+      "rationales": [
+        { "id": "uniform-service", "text": "The stated equal monthly service supports 600 / 6; the draft agrees with the facts and can be accepted." },
+        { "id": "reject-all-ai", "text": "Reject every AI draft, regardless of its evidence." }
+      ],
+      "hints": {
+        "L1": "Check the target month, the service duration, and the total.",
+        "L2": "Review the draft against the facts; agreement with an evidenced answer is a legitimate outcome.",
+        "L3": "June is included. Divide 600 by the number of equally served months: __.",
+        "L4": "June expense is AUD 100: 600 / 6. Select service and total with uniform-service and accept the correct preset draft."
+      },
+      "aiDraft": {
+        "text": "Preset correct training draft: June expense is AUD 100 because the AUD 600 service is delivered equally over six months.",
+        "answer": { "action": "amount", "amount": 100, "evidenceIds": ["service", "total"], "rationaleId": "uniform-service" },
+        "isCorrect": true
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "TR-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "transfer",
+      "title": "Independent check: a changed service period",
+      "unit": "AUD", "targetPeriod": "2026-12",
+      "facts": [
+        { "id": "payment", "text": "A fictional company pays AUD 900 in December 2026." },
+        { "id": "service", "text": "The payment covers service in January, February, and March 2027 only, delivered uniformly with equal monthly value. No service is delivered in December 2026." },
+        { "id": "target", "text": "What expense belongs to December 2026? Only judge expense allocation; no journal entry is requested." }
+      ],
+      "allowedActions": ["amount"],
+      "acceptedAnswers": [{ "action": "amount", "amount": 0, "evidenceIds": ["service", "target"], "rationaleId": "service-not-started" }],
+      "evidence": [
+        { "id": "service", "text": "The service starts in January; December has no delivered service." },
+        { "id": "target", "text": "The question is about December expense." },
+        { "id": "payment", "text": "Payment happens in December." }
+      ],
+      "rationales": [
+        { "id": "service-not-started", "text": "No service has been delivered in December, so none of the price belongs to December expense." },
+        { "id": "payment-month", "text": "The payment month receives the full expense." },
+        { "id": "divide-into-payment-month", "text": "Divide the price by three and assign a share to December even though service has not begun." }
+      ],
+      "hints": {
+        "L1": "Compare the service start date with the target month's end.",
+        "L2": "Expense follows the stated service delivery, rather than the cash payment date.",
+        "L3": "List only the months in which the contract says service is delivered. Is December on that list?",
+        "L4": "December expense is AUD 0 because service begins in January. Select service and target with service-not-started. These hints are available only after leaving the independent challenge or submitting."
+      },
+      "aiDraft": null, "draftOrigin": null
+    },
+    {
+      "id": "UN-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "insufficient_information",
+      "title": "Pause when milestone performance is unknown",
+      "unit": "AUD", "targetPeriod": "2026-12",
+      "facts": [
+        { "id": "milestones", "text": "A fictional AUD 1,200 contract delivers work against milestones; it does not specify equal monthly service." },
+        { "id": "missing-performance", "text": "The supplied documents omit acceptance records and performance progress for December." },
+        { "id": "target", "text": "Can the expense belonging to December be determined from these documents?" }
+      ],
+      "allowedActions": ["amount", "need_info"],
+      "acceptedAnswers": [{ "action": "need_info", "amount": null, "evidenceIds": ["milestones", "missing-performance"], "rationaleId": "need-performance" }],
+      "evidence": [
+        { "id": "milestones", "text": "Delivery depends on milestones, rather than equal monthly service." },
+        { "id": "missing-performance", "text": "Acceptance and progress information is missing." },
+        { "id": "total-only", "text": "The total price is AUD 1,200." }
+      ],
+      "rationales": [
+        { "id": "need-performance", "text": "Request acceptance or performance-progress evidence before determining the target-period amount; uniform allocation is not supported." },
+        { "id": "assume-equal", "text": "Assume three equal months and divide the total by three." },
+        { "id": "missing-means-zero", "text": "Missing evidence proves that no service occurred." }
+      ],
+      "hints": {
+        "L1": "Look for evidence that a milestone was delivered or accepted in the target period.",
+        "L2": "Do not assume uniform monthly performance for a milestone contract.",
+        "L3": "The total price is known, but which records establish the December performance? Identify what is missing.",
+        "L4": "Choose need_info with a null amount. Select milestones and missing-performance with need-performance, and request acceptance or performance-progress records."
+      },
+      "aiDraft": {
+        "text": "Preset training draft with a deliberate error: allocate AUD 400 to December by assuming three equal months.",
+        "answer": { "action": "amount", "amount": 400, "evidenceIds": ["total-only"], "rationaleId": "assume-equal" },
+        "isCorrect": false
+      },
+      "draftOrigin": "preset_training_example"
+    },
+    {
+      "id": "RT-01", "version": 1, "skillId": "cross-period-expense-allocation", "type": "retention",
+      "title": "Retention check: January's share of a three-month service",
+      "unit": "AUD", "targetPeriod": "2027-01",
+      "facts": [
+        { "id": "service", "text": "Fictional contract: service is provided uniformly from 1 December 2026 to 28 February 2027, with equal value in each of the three service months." },
+        { "id": "total", "text": "The three-month service costs AUD 1,500 in total." },
+        { "id": "target", "text": "What expense belongs to January 2027? The dates are fictional case facts, not a request to change the demonstration clock." }
+      ],
+      "allowedActions": ["amount"],
+      "acceptedAnswers": [{ "action": "amount", "amount": 500, "evidenceIds": ["service", "total", "target"], "rationaleId": "uniform-service" }],
+      "evidence": [
+        { "id": "service", "text": "January is one of three months of equal service value." },
+        { "id": "total", "text": "Total service price: AUD 1,500." },
+        { "id": "target", "text": "The question asks only for January expense." },
+        { "id": "calendar-year", "text": "Discard December because it is in a different calendar year." }
+      ],
+      "rationales": [
+        { "id": "uniform-service", "text": "Allocate the total over all three equally served months, including the month in the prior calendar year." },
+        { "id": "new-year-only", "text": "Divide by only January and February because they are in the target calendar year." }
+      ],
+      "hints": {
+        "L1": "Count all the service months, including the one before the year boundary.",
+        "L2": "Use the stated service period and equal monthly value; the calendar-year boundary does not remove a service month.",
+        "L3": "The period contains December, January, and February. Complete 1,500 / __ for January.",
+        "L4": "January expense is AUD 500: 1,500 / 3. Select service, total, and target with uniform-service. An incorrect independent submission demonstrates support restoration."
+      },
+      "aiDraft": null, "draftOrigin": null
+    }
+  ]
+}
