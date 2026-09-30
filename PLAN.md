@@ -1,35 +1,23 @@
 # Unlock project plan
 
-## Selected product
+## Selected product and authority
 
-The human lead selected Unlock and confirmed that [product.md](product.md), Hackathon development specification v1.3, is finalised. Unlock replaces the earlier FirstVisit candidate described in ancestor workspace material. The [research background](docs/future-work-research-and-recommendations.md) records the earlier confirmation that the problem statement had been released and the official work period had started.
+Unlock addresses “If AI does the beginner work, where does expertise come from?” with an apprenticeship workflow for junior software engineers in VS Code. [product.md](product.md) is the authoritative v2.1 scope; [product.en.md](product.en.md) mirrors it. This replaces the accountant scenario and the ancestor FirstVisit candidate. Airwallex is a benchmark for a capable engineering organisation, not a required customer system or integration.
 
-This document records the selected concept, confirmed two-developer assignment, and current handoff. Application implementation has not begun.
+The app is not implemented. The old finance issues, PRs, fixture validators, and React plan do not count as SWE delivery.
 
-## Agreed scope
+## P0 delivery target
 
-- One complete skill: cross-period expense allocation judgment.
-- Six interactive fictional cases and four pages, as defined in product sections 8 and 9.
-- Three P0 modules: work opportunities and judgment workbench; evidence-based support; mentor correction and reviewed experience reuse.
-- A local, same-browser demonstration with fixed reviewed content and deterministic rules.
-- Model integration, next-generation learner contributions, and real due-review scheduling remain P1.
+Build one integrated workflow from the VS Code commands through explicit bounded selection preview, mentor-reviewed local lesson context, authored task routing, a synthetic webhook-retry practice case, first prediction, hint exposure, deterministic test, wrong/correct preset patch review, separate sub-skill assessment, three evidence gates, and a persisted support-level update. The four-quadrant router uses senior-recorded risk facts and learner-specific skill fit; missing risk facts stay in senior triage. Real-code context help is local and unscored. The router preserves the distinction between real delivery and synthetic high-risk practice. The delayed G3 gate stays pending until a real eligible attempt at least 72 hours after a linked teaching attempt; do not pre-seed a pass for presentation.
 
-Product section 13 owns the three-day work sequence and exit gates. Product section 14 owns functional acceptance and evaluation boundaries. Avoid copying those lists into a second competing plan.
+The full stack and acceptance criteria are in product sections 7–8. P0 can read only an explicit active-editor selection and import a validated local `*.unlock.json` lesson with a reviewed snippet; it does not scan the repository or authenticate the mentor. No backend, model, autonomous delivery, live mentor service, or VSIX publication belongs to P0. A reviewed teaching card or snippet is enough for post-submission feedback. A live approval workflow is later scope.
 
-## Accepted documentation decisions
+## Two-developer handoff
 
-The user accepted all five recommendations from the product interview:
+Both developers agreed to replace the finance shared contract and backlog with the junior SWE workflow and to add bounded editor context and local mentor lesson bundles. `@samhouhaoyang` owns shared extension contracts, runtime, app composition, package, and CI after the first foundation slice; `@RankiiJ` owns assigned case/feature slices. Each reviews the other's PR. [Parallel delivery](docs/parallel-delivery.md) and [backlog](docs/backlog.json) define paths and merged prerequisites. No owner starts a ticket against an unmerged blocker, and agents do not merge PRs.
 
-1. Keep the canonical project documents inside this Unlock Git repository and leave pointers in the parent workspace.
-2. Start a new learning stage after every actual support-level change; retain prior evidence as history.
-3. Treat retries of exposed cases as practice only.
-4. Grade structured inputs in P0; keep free text in help requests.
-5. Require mentor resolution of high-confidence concerns, plus qualifying evidence, before further fading.
-
-The resulting behavior and verification examples are recorded in [accepted implementation decisions](docs/implementation-decisions.md). Stable terminology is recorded in [CONTEXT.md](CONTEXT.md).
+The short local presentation demo is a separate artifact outside this GitHub product implementation. Do not count it as a completed extension.
 
 ## Handoff status
 
-The repository contains documentation, agent configuration, and CI/issue-planning tooling. No application, case fixtures, grading engine, persistence layer, user test, or deployed environment has been delivered yet.
-
-The user confirmed `@samhouhaoyang` for foundation, mentoring, progress, and final integration, and `@RankiiJ` for content, learner flows, opportunities, metrics, and release verification. Each reviews the other's work. The [parallel delivery guide](docs/parallel-delivery.md), [shared contract](docs/contracts.md), and [backlog](docs/backlog.json) define the actual work split and merge prerequisites. Add real application commands and results to the README as implementation proceeds.
+Current deliverables are the revised specification, research memo, and planning documents. Record actual commands, test results, case review, Extension Development Host walkthrough, and limitations as implementation progresses. Do not report measured learning outcomes without a pilot.
