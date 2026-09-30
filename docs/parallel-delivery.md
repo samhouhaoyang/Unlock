@@ -1,12 +1,12 @@
 # Parallel delivery — junior SWE P0
 
-The accepted product is the desktop VS Code workflow in [product.md](../product.md). The old finance issue graph, React branches, and fixtures are superseded. [Backlog](backlog.json) will record the approved SWE ticket graph and file ownership after ticket publication; until then, its finance stories must not be started. GitHub Issues is the live tracker.
+The accepted product is the desktop VS Code workflow in [product.md](../product.md). The old finance issue graph, React branches, and fixtures are superseded. [Backlog](backlog.json) records the approved SWE ticket graph, issue numbers, ownership, and paths. GitHub Issues is the live tracker.
 
 Both developers agreed to replace the finance contract and backlog. `@samhouhaoyang` integrates shared contracts, runtime, app composition, package/lockfile, and CI after the first runnable slice; `@RankiiJ` implements assigned content and feature slices. Each reviews the other's PR. The same person does not approve their own work.
 
 ## Delivery sequence
 
-Start with a runnable vertical path through the VS Code command, synthetic P-01 practice, prediction, hint exposure, preset patch review, assessment, and persistence. After that merges, route/control, evidence gates, and approved feedback/privacy can proceed in parallel within separate owned files. Final integration waits for all three. The exact blockers, issue numbers, branch names, and allowed paths belong to the approved backlog; this prose is a summary, not a substitute for it.
+After documentation issue [#17](https://github.com/samhouhaoyang/Unlock/issues/17) merges and closes, start [#19](https://github.com/samhouhaoyang/Unlock/issues/19): a runnable vertical path through the VS Code command, synthetic P-01 practice, prediction, hint exposure, preset patch review, assessment, and persistence. After #19 merges, [#20](https://github.com/samhouhaoyang/Unlock/issues/20) route/control, [#21](https://github.com/samhouhaoyang/Unlock/issues/21) evidence gates, and [#22](https://github.com/samhouhaoyang/Unlock/issues/22) approved feedback/privacy can proceed without blocking one another within separate owned files. Final integration [#23](https://github.com/samhouhaoyang/Unlock/issues/23) waits for all three. The exact branch names and allowed paths are in the backlog.
 
 The local presentation mockup is outside the GitHub implementation and cannot close a SWE ticket. The older finance foundation/content PRs remain separate until their owners decide their disposition; their green checks do not demonstrate the extension.
 

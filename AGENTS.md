@@ -10,7 +10,7 @@ The app is not implemented yet. Use real commands from the README when they exis
 
 ## Parallel implementation
 
-Read `docs/parallel-delivery.md` and `docs/contracts.md` before taking a story. Find its owner, reviewer, branch, allowed paths, and blockers in `docs/backlog.json` and the linked GitHub issue. The old finance graph must not be used while the SWE tickets await approval and publication. Start only when prerequisites are merged and closed. One owner implements each story; the other developer reviews it. Do not expand across another active story's files.
+Read `docs/parallel-delivery.md` and `docs/contracts.md` before taking a story. Find its owner, reviewer, branch, allowed paths, and blockers in `docs/backlog.json` and the linked GitHub issue. The old finance issues and PRs are superseded; the SWE graph starts at #19 after docs issue #17 merges and closes. Start only when prerequisites are merged and closed. One owner implements each story; the other developer reviews it. Do not expand across another active story's files.
 
 After the first runnable slice, `@samhouhaoyang` is the integrator for `src/contracts/`, `src/runtime/`, `src/app/`, package/lockfile, and CI. Both developers agreed to replace the finance shared contract and backlog; agree later shared-contract changes with both developers before modifying them. Keep feature implementations in assigned directories and use the shared persistence interface. Run `node scripts/check-project.mjs` and the issue's meaningful validation. PRs target `main`, link their issue with `Closes #<number>`, and need green checks and peer review; agents do not merge PRs.
 

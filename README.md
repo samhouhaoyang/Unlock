@@ -11,7 +11,7 @@ Unlock is a planned VS Code extension that protects learning opportunities for j
 - [Pitch — 中文](pitch.md) and [English](pitch.en.md): presentation narrative.
 - [Plan](PLAN.md), [glossary](CONTEXT.md), [shared contract](docs/contracts.md), [parallel delivery](docs/parallel-delivery.md), and [decision records](docs/adr/README.md): implementation guidance.
 - [Junior SWE evidence memo](docs/research-junior-swe-evidence.md): research and assumptions. Earlier finance research is historical only.
-- [Backlog](docs/backlog.json): assigned ticket graph once the SWE tickets are approved and published.
+- [Backlog](docs/backlog.json): approved SWE issue graph, owners, blockers, and allowed paths.
 
 ## Intended P0
 
