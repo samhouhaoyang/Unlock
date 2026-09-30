@@ -1,12 +1,12 @@
 # Unlock — junior software engineer apprenticeship
 
-**Product specification v2.0 | 30 September 2026 | Intended behaviour; not implemented**
+**Product specification v2.1 | 30 September 2026 | Intended behaviour; not implemented**
 
 Challenge: **Future Work — “If AI does the beginner work, where does expertise come from?”** This file mirrors [product.md](product.md). Together they replace the accountant scenario. Older finance issues, PRs, and fixtures remain historical; their passing checks do not verify this SWE product.
 
 ## 1. Positioning, audience, and outcome
 
-**Unlock is a VS Code apprenticeship extension for junior software engineers across companies.** It reserves valuable judgments even when AI drafts code, separates practice from risky delivery, offers L0–L4 help for specific sub-skills, and reduces that help only when independent evidence supports a change. Airwallex is a demanding design benchmark, not the only customer or a required integration. The MVP requires no company AI reviewer, source-code connection, hosted model, or backend.
+**Unlock is a VS Code apprenticeship extension for junior software engineers across companies.** It reserves valuable judgments even when AI drafts code, separates practice from risky delivery, offers L0–L4 help for specific sub-skills, and reduces that help only when independent evidence supports a change. Airwallex is a demanding design benchmark, not the only customer or a required integration. The MVP reads only a learner-selected range from the active editor and uses mentor-reviewed local lesson bundles; it requires no company AI reviewer, hosted model, or backend.
 
 **Main selling point:** route work by learning value and delivery risk → let the junior predict and test before seeing an AI-authored patch → verify independent transfer and retention before fading help. The pilot outcome is the proportion of known-unsafe AI patches accepted on unseen cases. Also measure correct-patch acceptance, test quality, delayed performance, junior time, mentor time, case difficulty, and sample size. Completing the workflow alone does not establish improved workplace performance or confer a competence certificate.
 
@@ -15,6 +15,10 @@ The learner is a junior SWE working on bounded changes; the mentor is a qualifie
 ## 2. Four-quadrant opportunity routing
 
 Each task has a reviewed target sub-skill, `learningValue` and `deliveryRisk` (`high` or `low`), route, and one-sentence reason. Risk is the consequence of incorrect **real delivery**, not exercise difficulty. Learning value is relevance to this learner's current growth, not a universal task property. P0 uses authored labels and deterministic rules, not automatic AI risk classification.
+
+The task owner records the affected system, customer/security/data impact, likely blast radius, testability, and rollback path. **High delivery risk** applies if a mistake could affect customers, money, sensitive data, security, or a broad production path, or if verification or rollback is uncertain. **Low delivery risk** requires a bounded change with a practical test and rollback under ordinary peer review. Missing facts show **needs senior triage** before a quadrant is assigned; a small selection or passing test alone never proves low risk. A senior confirms the authored label and reason.
+
+**High learning value** requires all three: an approved target sub-skill in this junior's growth plan, current evidence showing that skill is still developing (support above L0, pending gates, or a recent failed transfer), and a meaningful prediction/test/review decision with feedback. Otherwise the card is low learning for this learner. The mentor can revise the fit with a recorded reason. These are transparent triage rules, not automated competence judgments; the same task may route differently for another junior.
 
 1. **High learning, low risk → junior does it with support.** Example: an internal webhook test or example-code change. The junior predicts, tests, and reviews AI; normal team delivery review still applies.
 2. **Low learning, low risk → AI handles it.** Example: a routine fixture update. P0 displays an authored AI-handled result; actual autonomous production action is outside this scope.
@@ -33,6 +37,8 @@ Assess these sub-skills separately against reviewed structured choices:
 - **Discriminating test design:** identify an assertion that would fail for an unsafe patch, beyond a happy-path test.
 - **Patch judgment:** accept, reject/correct, or request information with the test result or missing evidence that justifies the choice.
 
+A mentor chooses sub-skills from a small reviewed catalog by working backward from the task's failure mode: what contract must be read, what test distinguishes a wrong patch, and what decision must be justified? Each skill ID has an observable response, accepted evidence, a common failure, and a fresh transfer variant. File names, diagnostics, and an optional model suggestion cannot silently create a skill or alter its rubric.
+
 A correct decision with the wrong invariant or non-discriminating test is not a correct full judgment. An optional free-text explanation is stored for human review and is not automatically graded. P0 implements the complete evidence and transition rules for one target sub-skill; the others have separate assessment states and can remain pending.
 
 Reviewed fictional content has stable IDs and versions:
@@ -43,6 +49,10 @@ Reviewed fictional content has stable IDs and versions:
 - **R-01:** unseen retention variation, eligible only after a real qualifying delay.
 - **Two explanatory task cards:** AI-handled low-learning/low-risk and senior-owned low-learning/high-risk, without fake completion actions.
 
+P0 also accepts one **mentor-reviewed local lesson bundle** (`*.unlock.json`) imported by the junior. It carries a stable bundle/case version, reviewer and review status, source/provenance, target sub-skill IDs, routing facts and rationale, an optional code snippet or reference diff, applicability/exception, structured answer key, test prompt, and an L1–L4 hint ladder. The mentor ships the file through an existing team-controlled channel such as a reviewed Git change; Unlock has no live mentor account or sending service. The extension validates the bundle before use, displays the snippet as a read-only comparison, and never applies it to the junior's file automatically. The bundled fictional webhook lesson is the acceptance fixture; importing arbitrary company content does not make it approved or safe by itself.
+
+P0 can validate a bundle's schema and review declaration but cannot authenticate the named reviewer. Teams must use their existing access-controlled review channel for real work. Real selected code is local, unscored context; only the reviewed synthetic P-01/C-01/T-01/R-01 attempts can produce G1–G3 evidence.
+
 T-01 facts may be viewed for the attempt, but its answer, case-specific hint, AI patch, and explanatory feedback must stay hidden before a valid independent submission. Rewording or revising a previously exposed case never makes it fresh.
 
 ## 4. L0–L4 help and attempt integrity
@@ -52,6 +62,8 @@ T-01 facts may be viewed for the attempt, but its answer, case-specific hint, AI
 - **L2:** relevant contract principle without the result.
 - **L1:** direction toward the code, log, or specification clue.
 - **L0:** no relevant pre-submission help; ordinary feedback afterward.
+
+The junior can invoke `Unlock: Help me with this code` on an active editor selection. Before use, show the exact bounded excerpt and the selected lesson; read only that range, its language/file label, and nearby diagnostics. Do not silently scan other files, persist raw selected code in learning history, or send it to a service. The selected code supplies a line/symbol reference for an approved hint: L1 points to the relevant branch or diagnostic, L2 states the contract principle, L3 offers a partial test scaffold, and L4 shows the reviewed snippet and reasoning. If the selection cannot be linked to a reviewed lesson, show an unscored question prompt or a learner-previewed mentor request, not a fabricated code-specific answer. Workspace Trust gates any workspace-controlled execution; viewing a selection does not run code.
 
 The current level is the deepest help offered **by default** for one sub-skill. At L2, the learner may use L1 or L2 directly. They can request a deeper demonstration during practice; that attempt is assisted and does not count for an independent gate. A change L2→L1 withdraws the L2 principle from the next default practice while L1 remains. The level is neither an employee grade nor a delivery permission.
 
@@ -73,12 +85,12 @@ G3 stays pending until an actual eligible check occurs at least 72 hours after i
 
 ## 6. End-to-end experience and shared knowledge
 
-1. The junior invokes `Unlock: Explore work` and sees the four route cards and reasons.
-2. They open the high-risk **synthetic practice copy** beside the code. They can inspect facts and contract, while the answer and preset AI patch remain hidden.
+1. The junior invokes `Unlock: Explore work` and sees the four route cards, the authored risk/learning reasons, and any item needing senior triage. They may also select code and invoke `Unlock: Help me with this code` to attach an approved lesson.
+2. They preview the bounded editor selection or open the high-risk **synthetic practice copy** beside their code. A mentor-reviewed lesson bundle can show an approved reference snippet without writing into the workspace. Facts and contract are visible, while the exercise answer and preset AI patch remain hidden.
 3. They select the invariant and discriminating assertion and may add a short reason. If stuck, they request L1–L4 help. The first submitted prediction and help exposure are saved before reveal.
 4. They run the deterministic fixture test in VS Code's normal terminal and record/select the observed result. The MVP does not claim generic test-runner integration.
 5. They reveal the clearly labelled **preset AI patch**, then accept, reject/correct, or request more information with evidence. Include wrong and correct patches so blanket rejection is not rewarded.
-6. After submission, they see feedback and a reviewed experience card: cue, principle, applicability, exception, and source. A pre-reviewed card is enough for P0; live mentor authoring/approval is optional later work unless actually delivered.
+6. After submission, they see feedback and a reviewed experience card or mentor snippet: cue, principle, applicability, exception, source, and reviewer. P0 supports validated local import of a pre-reviewed lesson; live mentor authoring/approval remains later work.
 7. They try a different, unseen transfer case without hints. Only after submission do they see its answer and relevant card. The progress view shows separate G1–G3 states, case identities, help exposure, and dates.
 8. The next practice uses the new default help when a gate-driven change truly occurred. The four-quadrant router still keeps high-risk real delivery with a senior.
 
@@ -86,17 +98,17 @@ The formal sharing boundary is **private attempt → learner-previewed help requ
 
 ## 7. Technical format and MVP boundaries
 
-P0 is a **desktop VS Code extension** using TypeScript, Node.js 24, one explicit command, and one compact webview with semantic HTML, VS Code theme CSS, and vanilla TypeScript. The extension host owns the finite-step reducer, deterministic grader, and state. Versioned local JSON holds tasks, cases, hints, and preset AI patches. Save small run state in VS Code `workspaceState`; reopening a view restores it. A synthetic JS/TS fixture uses deterministic Node tests in the ordinary terminal. Build with `esbuild`, typecheck with `tsc --noEmit`, run Node unit tests, and package a local VSIX only after the Extension Development Host path works. Check Workspace Trust before executing workspace-controlled code.
+P0 is a **desktop VS Code extension** using TypeScript, Node.js 24, two explicit commands, and one compact webview beside the editor with semantic HTML, VS Code theme CSS, and vanilla TypeScript. The extension host reads the active editor's explicit bounded selection through the VS Code API and can use existing diagnostics; it does not index the repository. It owns the finite-step reducer, deterministic grader, and state. Versioned local JSON holds tasks, cases, hints, preset AI patches, and validated mentor lesson bundles. Use VS Code documents/diff views for code snippets and `workspaceState` for small learning state, without storing raw selected code. A synthetic JS/TS fixture uses deterministic Node tests in the ordinary terminal. Build with `esbuild`, typecheck with `tsc --noEmit`, run Node unit tests, and package a local VSIX only after the Extension Development Host path works. Check Workspace Trust before executing workspace-controlled code.
 
-P0 has no hosted model, backend, database, login, telemetry, company-repo scanning, automatic risk classifier, arbitrary test-runner integration, GitHub/GitLab connection, or production write. A future company pilot may add approved diff import, reviewed case authoring, and real mentor workflow. The product's first source of correctness remains reviewed case content and deterministic rules.
+P0 has no hosted model, backend, database, login, telemetry, company-repo scanning beyond the explicit selection, automatic risk classifier, arbitrary test-runner integration, GitHub/GitLab API connection, live mentor service, or production write. The local bundle can be distributed through ordinary team Git without Unlock integrating with Git. A future company pilot may add authenticated mentor delivery and an opt-in LLM adapter to propose skill tags or contextualize reviewed hints from a user-previewed excerpt. Model output never determines risk, answer truth, gate passes, or level transitions; any model hint shown before submission is recorded as help. The product's first source of correctness remains reviewed case content and deterministic rules.
 
 ## 8. P0 acceptance and verification
 
-The repository's main product must deliver one integrated workflow: **route an opportunity → open the appropriate real-work or practice boundary → record the learner's first judgment and help exposure → reveal and review the preset patch → assess the relevant sub-skills → update evidence gates and support state**. The entry boundary is the VS Code command and reviewed case data. Test the workflow through its user-visible outcomes and persisted state; keep pure grading and transition rules separately testable. Both assigned developers agreed to replace the prior finance-specific feature interfaces and records.
+The repository's main product must deliver one integrated workflow: **route an opportunity → capture an explicit bounded code selection or open the synthetic practice boundary → attach reviewed lesson content → record the learner's first judgment and help exposure → reveal and review the preset patch → assess the relevant sub-skills → update evidence gates and support state**. The entry boundary is a VS Code command, active-editor selection, and validated reviewed case data. Test the workflow through its user-visible outcomes and persisted state; keep pure grading and transition rules separately testable. Both assigned developers agreed to replace the prior finance-specific feature interfaces and records and to add selection context and local mentor bundles.
 
-Acceptance requires four correctly explained routes; a high-risk practice copy that cannot affect delivery; L0–L4 hint depth; three separately assessed sub-skills; G1–G3 with real exposure and time rules; one-step fading/restoration without duplicate transitions; incorrect and correct preset patches; a fresh transfer; post-submission reviewed feedback; local persistence, refresh, and reset; and keyboard-visible focus. A retention gate without an eligible delayed case remains pending. Live mentor authoring, model calls, rich charts, company integrations, and VSIX publication are outside P0.
+Acceptance requires four correctly explained routes plus a visible needs-triage state for missing risk facts; an explicit active-editor selection preview with a bounded read and no raw-code persistence; validated mentor lesson import and read-only snippet comparison; a high-risk practice copy that cannot affect delivery; L0–L4 contextual hint depth and honest no-match fallback; three separately assessed sub-skills; G1–G3 with real exposure and time rules; one-step fading/restoration without duplicate transitions; incorrect and correct preset patches; a fresh transfer; post-submission reviewed feedback; local persistence, refresh, and reset; and keyboard-visible focus. A retention gate without an eligible delayed case remains pending. Live mentor authoring, model calls, rich charts, company API integrations, and VSIX publication are outside P0.
 
-Meaningful tests cover the complete route-to-support workflow, independent-check eligibility, answer leakage, wrong/correct patch decisions, case-version exposure, linked retention timing, one-step transitions, storage failure, and privacy of unshared attempts. Use authored fixtures and a controlled clock to test timing, never fabricated learner progress. Rehearse the full path twice in the Extension Development Host and record actual results. The current `node scripts/check-project.mjs` validates documents and tooling only until the SWE extension and its app gates are implemented.
+Meaningful tests cover the complete route-to-support workflow, selection limits and unsupported/missing editor cases, bundle validation and no-match behavior, independent-check eligibility, answer leakage, wrong/correct patch decisions, case-version exposure, linked retention timing, one-step transitions, storage failure, and privacy of unshared attempts and raw code. Use authored fixtures and a controlled clock to test timing, never fabricated learner progress. Rehearse the full path twice in the Extension Development Host and record actual results. The current `node scripts/check-project.mjs` validates documents and tooling only until the SWE extension and its app gates are implemented.
 
 ## 9. Product claims and evaluation
 

@@ -8,6 +8,8 @@ This glossary defines shared product language. [product.md](product.md) owns beh
 
 **Task:** A real work opportunity with reviewed learning value, delivery risk, target sub-skill, route, and reason. A task is distinct from a fictional case.
 
+**Risk facts:** Senior-recorded impact, blast radius, verification, and rollback facts used to justify high/low delivery risk. Missing facts require senior triage before routing.
+
 **Learning value:** Relevance to this junior's current growth. It varies by learner and sub-skill.
 
 **Delivery risk:** Consequence of an incorrect judgment in real work, distinct from exercise difficulty.
@@ -19,6 +21,12 @@ This glossary defines shared product language. [product.md](product.md) owns beh
 **Case:** Versioned, reviewed facts, choices, hints, expected evidence, preset patch, and feedback for an exercise.
 
 **Sub-skill:** One assessable judgment component: contract interpretation, discriminating test design, or patch judgment in the first case pack. Progress is tracked separately.
+
+**Sub-skill catalog:** Mentor-reviewed IDs with observable responses, accepted evidence, common failures, and fresh transfer variants. A diagnostic or model suggestion cannot redefine a catalog entry.
+
+**Editor context:** A junior-previewed, bounded selection from the active VS Code editor plus file/language label and nearby existing diagnostics. Real selected code remains local, is not stored in the learning snapshot, and is not scored for P0 gates.
+
+**Mentor lesson bundle:** A versioned local `*.unlock.json` file with reviewed teaching content, snippet/reference diff, task and skill metadata, and L1–L4 hints. Local validation checks form and declarations, not reviewer identity.
 
 **Attempt:** One learner's case interaction, including first prediction, help/answer exposure, patch decision, time, and outcome.
 

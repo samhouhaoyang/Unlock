@@ -9,7 +9,7 @@ AI can produce a junior engineer's first patch. The junior still needs to learn 
 ## What judges will see
 
 1. Four authored route cards: a useful low-risk task goes to the junior; a routine low-risk task goes to AI; a useful high-risk task stays with a senior while the junior receives a separate synthetic practice copy; high-risk work outside the learning edge stays with the senior. A passed learning gate never changes delivery ownership.
-2. A junior opens the fictional webhook-retry case in VS Code. Before seeing the clearly labelled preset patch, they identify the stable event-ID invariant and choose a test that would catch a changed ID on retry. They may request L1–L4 help, which marks the attempt assisted.
+2. A junior selects code in the editor and previews the bounded context Unlock will read. A mentor-reviewed local lesson links that context to a code snippet and L1–L4 hints; an unmatched selection gets an honest fallback. In the fictional webhook-retry case, before seeing the clearly labelled preset patch, the junior identifies the stable event-ID invariant and chooses a test that would catch a changed ID on retry. Requested help marks the scored attempt assisted.
 3. A deterministic fixture test and the revealed unsafe patch let the junior reject it with evidence. A correct-patch control checks that the learner can also accept justified AI work.
 4. A fresh re-trigger-after-downtime case tests transfer. A distinct unseen case at least 72 hours after a linked teaching attempt tests retention. G3 remains visibly pending until that real check occurs; a presentation cannot manufacture a pass.
 5. Progress shows separate contract, test, and patch-judgment states, actual help exposure, each gate, and any one-step level change. A reviewed teaching card appears only after submission. Private attempts never automatically become shared advice.
@@ -18,6 +18,6 @@ The first pathway uses fictional webhook events grounded in public [Airwallex we
 
 ## MVP implementation and honest claim
 
-One desktop VS Code extension uses TypeScript, Node 24, a command and webview, versioned reviewed JSON, deterministic grading, `workspaceState`, a small JS/TS fixture, `esbuild`, `tsc`, and Node tests. There is no backend, model call, source scan, or production write. The extension and user outcomes are not implemented or measured yet. A pilot would compare unsafe-patch acceptance on unseen cases, correct-patch acceptance, test quality, delayed performance, and junior/mentor time.
+One desktop VS Code extension uses TypeScript, Node 24, two explicit commands and a webview, a bounded active-editor selection, an imported mentor lesson file, versioned reviewed JSON, deterministic grading, `workspaceState`, a small JS/TS fixture, `esbuild`, `tsc`, and Node tests. Real selected code remains local and unscored. There is no backend, model call, broad source scan, live mentor service, or production write. The extension and user outcomes are not implemented or measured yet. A pilot would compare unsafe-patch acceptance on unseen cases, correct-patch acceptance, test quality, delayed performance, and junior/mentor time.
 
 [Full English product specification](product.en.md) · [中文简报](pitch.md).

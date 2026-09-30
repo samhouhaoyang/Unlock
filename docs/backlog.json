@@ -27,6 +27,7 @@
         "src/runtime/",
         "src/features/practice/",
         "content/cases/P-01.json",
+        "content/lessons/P-01.unlock.json",
         "content/tasks/high-risk-practice.json",
         "scripts/check-content.mjs",
         "package.json",
@@ -36,15 +37,16 @@
         "tests/first-path/",
         "README.md"
       ],
-      "story": "As a junior SWE, I can open Unlock, enter a synthetic high-risk practice case, predict and test before seeing an unsafe preset patch, judge it with evidence, and resume my saved attempt.",
+      "story": "As a junior SWE, I can preview a bounded selection from my active editor, open a linked synthetic high-risk practice case, predict and test before seeing an unsafe preset patch, judge it with evidence, and resume my saved attempt.",
       "acceptance": [
-        "Launch the desktop VS Code command and compact keyboard-accessible webview in the Extension Development Host.",
+        "Launch Explore work and Help me with this code commands with a compact keyboard-accessible webview beside the editor in the Extension Development Host.",
+        "Preview only an explicit bounded active-editor selection; handle missing, empty, oversized, or unsupported selections visibly; attach an authored P-01 lesson or show an honest no-match fallback without a workspace scan, upload, or raw-code persistence.",
         "Use reviewed versioned P-01 and a deterministic fixture test; clearly label synthetic task and patch, with no real delivery or repository write.",
         "Capture first invariant/test prediction and actual L0–L4 hint exposure before patch reveal, then persist a justified patch decision and separate sub-skill outcomes.",
         "Restore a run after reopening; repeated submission is idempotent and a failed workspaceState write leaves committed state unchanged.",
         "No case-specific answer or patch leaks before the required prediction; grade structured choices without a model."
       ],
-      "verification": "Run project gates and an Extension Development Host walkthrough from route to persisted P-01 feedback; test disclosure, duplicate submission, and storage failure.",
+      "verification": "Run project gates and an Extension Development Host walkthrough from editor selection and route to persisted P-01 feedback; test selection boundaries, no raw-code persistence, disclosure, duplicate submission, and storage failure.",
       "scope": "First end-to-end tracer bullet; shared integration owner."
     },
     {
@@ -65,14 +67,15 @@
         "content/cases/C-01.json",
         "tests/routing/"
       ],
-      "story": "As a junior SWE, I can see all four learning-value and delivery-risk routes, then work a low-risk control case and accept a correct preset patch for the right reason.",
+      "story": "As a junior SWE, I can see why a task is high or low learning value and delivery risk, know when senior triage is needed, then work a low-risk control case and accept a correct preset patch for the right reason.",
       "acceptance": [
-        "Each authored task card explains learning value, delivery risk, target sub-skill, delivery owner, and reason.",
+        "Each authored task card explains target sub-skill, learner-specific learning fit, risk facts, high/low labels, delivery owner, and reason; high learning requires a growth-plan skill gap and meaningful prediction/test/review decision.",
+        "Consequential customer/data/security or broad production impact, or uncertain verification/rollback, is high risk; low risk requires bounded testable reversible work under normal review; missing facts show needs senior triage rather than a false quadrant.",
         "High-learning/high-risk opens only a separate synthetic practice copy; low-learning routes show no fake completion action.",
         "C-01 follows the same prediction, test, reveal, judgment, and persistence path and rewards justified acceptance of the correct patch, not blanket rejection.",
         "Keyboard operation and focus remain usable."
       ],
-      "verification": "Use authored case validation and route/control workflow checks, including all four quadrants and a correct-patch acceptance.",
+      "verification": "Use authored case validation and route/control workflow checks, including all four quadrants, missing-facts triage, learner-specific learning fit, and a correct-patch acceptance.",
       "scope": "Feature files and case content only; no shared runtime or app composition changes."
     },
     {
@@ -98,6 +101,7 @@
       "story": "As a junior SWE, I can see separate sub-skill assessment and G1–G3 states, practise a changed condition, and receive only evidence-earned one-step changes to L0–L4 default help.",
       "acceptance": [
         "Separately assess contract interpretation, discriminating test design, and patch judgment; complete G1–G3 transitions for one target sub-skill while others may remain pending.",
+        "Use stable mentor-reviewed sub-skill IDs with observable responses, accepted evidence, common failures, and transfer variants; real selected-code help never supplies P0 gate evidence.",
         "G1 requires a fresh no-hint regular check; G2 requires unseen changed-condition T-01; G3 requires unseen R-01 at least 72 hours after a stored identified teaching attempt.",
         "Expose no T-01/R-01 answer before valid submission; retries and case-version edits remain practice only.",
         "All current-stage gates and no unresolved concern fade one step; failed transfer/retention restores one step; help seeking and interrupted checks are not failures.",
@@ -121,17 +125,19 @@
       "paths": [
         "src/features/feedback/",
         "content/cards/",
+        "content/lessons/mentor-example.unlock.json",
         "tests/feedback/"
       ],
-      "story": "As a junior SWE, I can read an approved teaching card after submitting, preview exactly what a local help request would share, and keep my private attempt out of shared guidance.",
+      "story": "As a junior SWE, I can inspect a mentor-reviewed local lesson snippet beside my code, read approved feedback after submitting, preview exactly what a help request would share, and keep my private attempt out of shared guidance.",
       "acceptance": [
-        "A fictional pre-reviewed card states cue, principle, applicability, exception, source, and review status.",
+        "A fictional pre-reviewed card and versioned mentor lesson declare cue, principle, applicability, exception, source, reviewer and review status; bundle validation rejects malformed content and unsupported skill IDs, while the UI admits reviewer identity is not authenticated locally.",
+        "Show a mentor snippet/reference diff as a read-only comparison, never an automatic edit; a selected-code hint must use reviewed lesson content and respect L0–L4, with an unscored fallback on no match.",
         "Feedback is unavailable before submission and never exposes an unseen case answer early.",
         "The learner can preview selected help-request context and cancel it; private attempt transcripts are not card content or automatically shared.",
-        "Clearly explain that real mentor sending/approval and multi-user isolation are outside P0."
+        "Explain that the mentor ships a local file through an existing controlled channel; live sending/approval and multi-user isolation are outside P0."
       ],
-      "verification": "Exercise feedback before/after submission, help-request preview/cancel, and privacy selectors through the visible workflow.",
-      "scope": "Static reviewed P0 feedback; no hosted mentor service."
+      "verification": "Exercise valid/invalid local bundle handling, read-only snippet display, contextual hint/no-match behavior, feedback before/after submission, help-request preview/cancel, and privacy selectors through the visible workflow.",
+      "scope": "Reviewed local mentor lesson and feedback feature; host file import is composed in #23, with no hosted mentor service."
     },
     {
       "id": "INTEGRATE_VERIFY",
@@ -155,15 +161,16 @@
         "docs/demo-runbook.md",
         "README.md"
       ],
-      "story": "As a team, we can run the complete route-to-support workflow twice in the Extension Development Host and explain exactly which evidence is real, pending, or synthetic.",
+      "story": "As a team, we can run the complete editor-selection-to-support workflow twice in the Extension Development Host, import a mentor lesson file, and explain exactly which evidence is real, pending, or synthetic.",
       "acceptance": [
-        "Compose all four route cards, P-01/C-01/T-01/R-01, prediction/test, patch review, reviewed feedback, separate sub-skills, and G1–G3 progress in one coherent command flow.",
+        "Compose explicit editor selection preview, all four route cards plus missing-facts triage, P-01/C-01/T-01/R-01, prediction/test, patch review, reviewed feedback, separate sub-skills, and G1–G3 progress in one coherent flow.",
+        "Wire explicit local *.unlock.json import and validated read-only mentor snippet comparison through the extension host; no raw selected code is saved/uploaded, no unmatched code-specific hint is invented, and real-code help remains unscored.",
         "Preserve high-risk senior delivery, private attempts, L0–L4 help depth, and honest pending G3 across refresh and reset.",
         "Show visible keyboard focus and usable layout; a failed persistence write never shows a half-committed transition.",
-        "Run integration checks for wrong/correct patches, route, exposure, transfer, retention timing, and one-step fade/restoration.",
+        "Run integration checks for wrong/correct patches, route/triage, selection limits, bundle import, hint match/no-match, exposure, transfer, retention timing, and one-step fade/restoration.",
         "Record actual Extension Development Host commands, results, limits, and a presenter runbook. Do not claim measured learning or production safety."
       ],
-      "verification": "Run node scripts/check-project.mjs, meaningful integration tests, and two full Extension Development Host walkthroughs; record evidence.",
+      "verification": "Run node scripts/check-project.mjs, meaningful integration tests, and two full Extension Development Host walkthroughs including bounded selection and local mentor lesson import; record evidence.",
       "scope": "Final composition and acceptance after all feature branches merge."
     }
   ]

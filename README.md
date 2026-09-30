@@ -11,11 +11,12 @@ Unlock is a planned VS Code extension that protects learning opportunities for j
 - [Pitch — 中文](pitch.md) and [English](pitch.en.md): presentation narrative.
 - [Plan](PLAN.md), [glossary](CONTEXT.md), [shared contract](docs/contracts.md), [parallel delivery](docs/parallel-delivery.md), and [decision records](docs/adr/README.md): implementation guidance.
 - [Junior SWE evidence memo](docs/research-junior-swe-evidence.md): research and assumptions. Earlier finance research is historical only.
+- [VS Code contextual-help research](docs/research-vscode-contextual-help.md): official API capabilities, mentor lesson handoff, and model boundaries.
 - [Backlog](docs/backlog.json): approved SWE issue graph, owners, blockers, and allowed paths.
 
 ## Intended P0
 
-One TypeScript/Node 24 desktop VS Code extension command opens a compact webview. Four authored task cards cover the learning-value × delivery-risk quadrants. One fictional webhook-retry case pack supports contract interpretation, discriminating test design, and patch judgment. It includes an unsafe preset patch, a correct control, fresh transfer, and delayed retention case. The extension uses reviewed JSON, deterministic grading, and VS Code workspaceState. The high-risk practice copy cannot affect real delivery. No model, backend, source scan, company reviewer, or production write is required.
+Two explicit TypeScript/Node 24 desktop VS Code commands open a compact webview and preview a bounded active-editor selection. Four authored task cards cover the learning-value × delivery-risk quadrants with an explicit senior-triage state for missing facts. One fictional webhook-retry case pack supports contract interpretation, discriminating test design, and patch judgment. It includes an unsafe preset patch, a correct control, fresh transfer, and delayed retention case. A versioned local mentor lesson bundle supplies reviewed snippets and L1–L4 hints for selection-linked help; a junior can import a bundle through an existing team-controlled file handoff. The extension uses reviewed JSON, deterministic grading, and VS Code workspaceState without retaining raw selected code. Real-code help is unscored; the high-risk synthetic practice copy cannot affect real delivery. No model, backend, broad repository scan, live mentor service, or production write is required.
 
 The learner sees L0–L4 hints in practice. G1 independent check, G2 changed-condition transfer, and G3 unseen check at least 72 hours after a linked teaching attempt govern a one-step help change per sub-skill. If the delayed check has not happened, G3 remains pending. Private attempts are not shared; a learner-previewed help request and independently approved teaching copy are separate states.
 
