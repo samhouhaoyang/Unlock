@@ -1,43 +1,30 @@
-# Unlock
+# Unlock — junior SWE apprenticeship
 
-Unlock is an AI apprenticeship demo: a junior makes a workplace judgment, receives appropriate support, reviews an AI draft, and demonstrates independent judgment in a changed case. A mentor's reviewed explanation becomes feedback for subsequent learning.
+Unlock is a planned VS Code extension that protects learning opportunities for junior software engineers when AI drafts code. It routes work by learning value and delivery risk, asks the junior to judge before seeing a preset patch, and changes L0–L4 help only after independent evidence. Airwallex is a design benchmark; the product is for teams at any company.
 
-This repository is the canonical home of the project. The current deliverable is the finalised product specification and its supporting documentation; the application has not been implemented. The planned stack is React, TypeScript, and Vite, with local persistence in one browser.
+**Status:** product specification and repository planning only. No SWE extension, VSIX, user study, or deployed app exists in this branch. Old finance PRs and issues describe a superseded design and do not validate this product.
 
-## Read the project
+## Project documents
 
-| Document | Purpose and authority |
-| --- | --- |
-| [Product specification — 中文](product.md) | Authoritative v1.3 scope, user flows, cases, evidence rules, demo script, and acceptance criteria |
-| [Product specification — English](product.en.md) | English counterpart of the product specification |
-| [Accepted implementation decisions](docs/implementation-decisions.md) | Clarifications accepted after v1.3: stages, exposed cases, structured grading, and review resolution |
-| [Pitch — 中文](pitch.md) / [English](pitch.en.md) | Authoritative narrative and presentation wording |
-| [Domain glossary](CONTEXT.md) | Shared terminology; no implementation specification |
-| [Project plan](PLAN.md) | Selected concept, delivery scope, and handoff status |
-| [Parallel delivery](docs/parallel-delivery.md) | Two-developer ownership, issue dependencies, branch/merge rules, and CI |
-| [Shared contract v1](docs/contracts.md) | Stable content, persistence, and feature interfaces for parallel implementation |
-| [Decision records](docs/adr/README.md) | Rationale for consequential domain and data boundaries |
-| [Research background](docs/future-work-research-and-recommendations.md) | Earlier research and historical design alternatives; does not override the selected product |
-| [Agent instructions](AGENTS.md) | How engineering work uses these documents and GitHub Issues |
+- [Product specification — 中文](product.md) and [English](product.en.md): scope, user journey, case pack, and acceptance.
+- [Implementation decisions](docs/implementation-decisions.md): accepted boundary clarifications.
+- [Pitch — 中文](pitch.md) and [English](pitch.en.md): presentation narrative.
+- [Plan](PLAN.md), [glossary](CONTEXT.md), [shared contract](docs/contracts.md), [parallel delivery](docs/parallel-delivery.md), and [decision records](docs/adr/README.md): implementation guidance.
+- [Junior SWE evidence memo](docs/research-junior-swe-evidence.md): research and assumptions. Earlier finance research is historical only.
+- [Backlog](docs/backlog.json): assigned ticket graph once the SWE tickets are approved and published.
 
-Read the product specification and accepted decisions together. Product and implementation decisions govern behavior; the pitch governs narrative; the glossary governs terminology. Keep the two product language versions aligned when changing requirements. Earlier research proposals are historical context.
+## Intended P0
 
-## Intended demonstration
+One TypeScript/Node 24 desktop VS Code extension command opens a compact webview. Four authored task cards cover the learning-value × delivery-risk quadrants. One fictional webhook-retry case pack supports contract interpretation, discriminating test design, and patch judgment. It includes an unsafe preset patch, a correct control, fresh transfer, and delayed retention case. The extension uses reviewed JSON, deterministic grading, and VS Code workspaceState. The high-risk practice copy cannot affect real delivery. No model, backend, source scan, company reviewer, or production write is required.
 
-The P0 build covers one finance judgment skill, six fictional interactive cases, and four pages. Its main path is WK-01 practice → mentor reply and published experience card → unassisted TR-01 → one L2-to-L1 transition using clearly labelled simulated history plus the live check. RT-01 is a separate support-restoration demonstration. UN-01 previews the need for more information.
+The learner sees L0–L4 hints in practice. G1 independent check, G2 changed-condition transfer, and G3 unseen check at least 72 hours after a linked teaching attempt govern a one-step help change per sub-skill. If the delayed check has not happened, G3 remains pending. Private attempts are not shared; a learner-previewed help request and independently approved teaching copy are separate states.
 
-See product sections 11, 13, and 14 for the three-minute script, three-day delivery plan, and acceptance criteria. The accepted decisions add concrete edge cases without adding another feature track.
+## Verification
 
-## Development status
-
-There is no application scaffold, package manifest, or deployed demo yet. Repository tooling is available with Node.js 24 (see `.nvmrc`):
+With Node.js 24 (see `.nvmrc`), run:
 
 ```bash
 node scripts/check-project.mjs
 ```
 
-This verifies local documentation links, the assigned story/dependency graph, and the repository tooling tests. It requires no npm installation while the repository contains documentation/tooling only. If `content/` exists, its validator must pass. When the foundation story adds `package.json`, this same command requires a committed lockfile and runs `npm ci`, `npm run typecheck`, `npm run lint`, `npm run test`, and `npm run build`; missing gates fail.
-
-GitHub Actions runs `verify` on pushes and PRs, and `issue-dependencies` on PRs. Follow the [parallel delivery guide](docs/parallel-delivery.md) and link each PR to its assigned issue. Add actual app startup, preview, and deployment instructions here as implementation proceeds. The specification still describes intended application behavior, not completed implementation or measured learning outcomes.
-
-GitHub currently blocks branch-protection enforcement for this private repository's plan. The checks run, but both developers must manually honor green checks and peer approval before merging. The delivery guide records the limitation and the prepared rule for a future plan upgrade.
+This currently checks documentation links, the backlog shape, and tooling tests. Once an extension package exists, the same command also requires the committed lockfile and typecheck, lint, test, and build scripts. A green tooling check does **not** mean the SWE extension works. Add the actual Extension Development Host launch, fixture test, and packaging commands only after they run successfully. PRs require a peer review and green checks; agents do not merge them.

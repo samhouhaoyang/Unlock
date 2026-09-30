@@ -2,7 +2,7 @@
 
 **Product specification v2.0 | 30 September 2026 | Intended behaviour; not implemented**
 
-Challenge: **Future Work — “If AI does the beginner work, where does expertise come from?”** This file mirrors [product.md](product.md). Together they replace the accountant scenario. The repository's README, PLAN, pitch, implementation decisions, shared contracts, backlog, issues, and finance fixtures still describe the earlier plan until the repository track updates them. A passing check on old finance content does not verify this SWE product.
+Challenge: **Future Work — “If AI does the beginner work, where does expertise come from?”** This file mirrors [product.md](product.md). Together they replace the accountant scenario. Older finance issues, PRs, and fixtures remain historical; their passing checks do not verify this SWE product.
 
 ## 1. Positioning, audience, and outcome
 
@@ -92,11 +92,11 @@ P0 has no hosted model, backend, database, login, telemetry, company-repo scanni
 
 ## 8. P0 acceptance and verification
 
-The repository's main product must deliver one integrated workflow: **route an opportunity → open the appropriate real-work or practice boundary → record the learner's first judgment and help exposure → reveal and review the preset patch → assess the relevant sub-skills → update evidence gates and support state**. The entry boundary is the VS Code command and reviewed case data. Test the workflow through its user-visible outcomes and persisted state; keep pure grading and transition rules separately testable. The prior finance-specific feature interfaces and records must be re-scoped with both assigned developers before implementation.
+The repository's main product must deliver one integrated workflow: **route an opportunity → open the appropriate real-work or practice boundary → record the learner's first judgment and help exposure → reveal and review the preset patch → assess the relevant sub-skills → update evidence gates and support state**. The entry boundary is the VS Code command and reviewed case data. Test the workflow through its user-visible outcomes and persisted state; keep pure grading and transition rules separately testable. Both assigned developers agreed to replace the prior finance-specific feature interfaces and records.
 
 Acceptance requires four correctly explained routes; a high-risk practice copy that cannot affect delivery; L0–L4 hint depth; three separately assessed sub-skills; G1–G3 with real exposure and time rules; one-step fading/restoration without duplicate transitions; incorrect and correct preset patches; a fresh transfer; post-submission reviewed feedback; local persistence, refresh, and reset; and keyboard-visible focus. A retention gate without an eligible delayed case remains pending. Live mentor authoring, model calls, rich charts, company integrations, and VSIX publication are outside P0.
 
-Meaningful tests cover the complete route-to-support workflow, independent-check eligibility, answer leakage, wrong/correct patch decisions, case-version exposure, linked retention timing, one-step transitions, storage failure, and privacy of unshared attempts. Use authored fixtures and a controlled clock to test timing, never fabricated learner progress. Rehearse the full path twice in the Extension Development Host and record actual results. The existing `node scripts/check-project.mjs` validates old finance content until the repository artifacts and gates are updated; those checks cannot verify the SWE extension.
+Meaningful tests cover the complete route-to-support workflow, independent-check eligibility, answer leakage, wrong/correct patch decisions, case-version exposure, linked retention timing, one-step transitions, storage failure, and privacy of unshared attempts. Use authored fixtures and a controlled clock to test timing, never fabricated learner progress. Rehearse the full path twice in the Extension Development Host and record actual results. The current `node scripts/check-project.mjs` validates documents and tooling only until the SWE extension and its app gates are implemented.
 
 ## 9. Product claims and evaluation
 
